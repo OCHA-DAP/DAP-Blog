@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <!--
-
-                88                                  88
-                88                                  88
-                88                                  88
-     ,adPPYba,  88  8b      db      d8   ,adPPYba,  88,dPPYba,
-    a8P_____88  88  `8b    d88b    d8'  a8P_____88  88P'    "8a
-    8PP"""""""  88   `8b  d8'`8b  d8'   8PP"""""""  88       d8
-    "8b,   ,aa  88    `8bd8'  `8bd8'    "8b,   ,aa  88b,   ,a8"
-     `"Ybbd8"'  88      YP      YP       `"Ybbd8"'  8Y"Ybbd8"'
-
-
+Based on 'eleb' theme and 'Strongly Typed' by HTML5. Licenses and links on https://github.com/OCHA-DAP/DAP-Blog
 -->
+
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
@@ -69,30 +60,57 @@
     <link rel="alternate" href="<?php echo $GLOBALS['_DEFAULT_RSSFEED_URL']; ?>" type="application/rss+xml" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+    <!-- HTML5 JS + CSS --> 
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=1040" />
+        <!-- <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700" rel="stylesheet" type="text/css" /> -->
+        <link href='http://fonts.googleapis.com/css?family=Volkhov:400,700' rel='stylesheet' type='text/css'>
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.dropotron.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-panels.min.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel-noscript.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-desktop.css" />
+        </noscript>
+
+
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body class="left-sidebar"
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container visible-xs mobile-nav-wrapper">
-        <nav class="navbar navbar-default" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex6-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/logo@2x.png" alt="<?php bloginfo('name');?>" height="50" width="50"><span class="navbar-sitename"><?php bloginfo('name'); ?></span></a>
-            </div> <!-- .navbar-header -->
-            <div class="collapse navbar-collapse navbar-ex6-collapse">
-                <ul class="nav navbar-nav">
-                    <?php wp_nav_menu( array('theme_location' => 'MobileNavigation', 'items_wrap'=> '%3$s', 'container'=> '')); ?>
-                </ul>
-            </div><!-- .navbar-collapse -->
-        </nav> <!-- .navbar-default -->
+    <div class="header-wrapper">
+        <div id="header" class="container">
+
+                <!-- Logo -->
+                <h1 id="logo"><a href="#">DAP <i>Blog</i></a></h1>
+                <p>Blog roll for OCHA's Data & Analysis Project.</p>
+                        
+            <nav class="nav">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex6-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/logo@2x.png" alt="<?php bloginfo('name');?>" height="50" width="50"><span class="navbar-sitename"><?php bloginfo('name'); ?></span></a>
+                </div> <!-- .navbar-header -->
+                <div class="collapse navbar-collapse navbar-ex6-collapse">
+                    <ul class="nav navbar-nav">
+                        <?php wp_nav_menu( array('theme_location' => 'MobileNavigation', 'items_wrap'=> '%3$s', 'container'=> '')); ?>
+                    </ul>
+                </div><!-- .navbar-collapse -->
+            </nav> <!-- .navbar-default -->
+    </div>
     </div> <!-- .mobile-nav-wrapper -->

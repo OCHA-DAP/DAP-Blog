@@ -15,11 +15,11 @@
 /* Container */
 
 	body {
-		min-width: 1200px;
+		min-width: 940px;
 	}
 
 	.container {
-		width: 1200px;
+		width: 940px;
 		margin: 0 auto;
 	}
 
@@ -31,8 +31,8 @@
 
 		.container.big {
 			width: 100%;
-			max-width: 1500px;
-			min-width: 1200px;
+			max-width: 1000px;
+			min-width: 940px;
 		}
 
 /* Grid */

@@ -60,7 +60,7 @@
 	
 	#main-wrapper
 	{
-		padding: 4em 0 4em 0;
+		padding: 2em 0 4em 0;
 	}
 	
 	#footer-wrapper
@@ -74,17 +74,18 @@
 
 	#header
 	{
-		padding: 12em 0 7em 0;
+		padding: 10em 0 3em 0;
 	}
 
 		#header h1
 		{
-			font-size: 2.5em;
+			font-size: 5em;
+			line-height: 100%;
 		}
 		
 		#header p
 		{
-			margin: 2em 0 0 0;
+			margin: 3em 0 0 0;
 		}
 
 /*********************************************************************************/
