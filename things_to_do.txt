@@ -1,0 +1,38 @@
+List of things we need for the website
+
+
+Change the font of headers to the RW standard with color as well. 
+
+Implement the CSS in the blog that I've selected. 
+
+Fix the lines aroudn the banner. 
+
+
+// Content 
+
+
+Content for the analytics part of the website. Stub of what that piece of HDx is? 
+	 - stub 
+	 - whole page 
+
+Content for the repository part of the website. Stub of what that piece of HDx is?
+	 - stub 
+	 - whole page
+
+Content for the standards part of the website. Stub of what that piece of HDx is?
+	 - stub 
+	 - whole page
+
+
+
+
+
+
+
+#header h1
+		{
+			font-family: 'Volkhov'; /* It was Arvo. */
+			font-weight: 700;
+			color: #666666;
+			text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+		}
