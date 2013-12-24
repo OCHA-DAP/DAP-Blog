@@ -26,6 +26,7 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
+		<link rel="stylesheet" href="css/d3-bar-chart.css" type="text/css"/>
 	</head>
 	<body class="homepage">
 
@@ -45,26 +46,27 @@
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href="" class="icon icon-bar-chart"><span>About</span></a>
+										<a href="about.html" class="icon icon-bar-chart"><span>About</span></a>
 										<ul>
 											<li><a href="what_is_dap.html">What is DAP?</a></li>
 											<li><a href="team.html">Team</a></li>
 											<li><a href="supporters.html">Supporters</a></li>
-											<li><a href="iba.html">Independent Board of Advisors</a></li>
+											<li><a href="independent_advisory_board.html">Independent Board of Advisors</a></li>
 											<li><a href="ocha.html">OCHA</a></li>
 										</ul>
 									</li>
 
 									<li><a class="icon icon-cog" href="#"><span>Project Details</span></a>
 										<ul>
-											<li><a href="#">DAP Analytics</a></li>
-											<li><a href="http://127.0.0.1:5000/">DAP Repository</a></li>
-											<li><a href="#">DAP Standards</a></li>
+											<li><a href="analytics.html">DAP Analytics</a></li>
+											<li><a href="repository.html">DAP Repository</a></li>
+											<li><a href="standards.html">DAP Standards</a></li>
 										</ul>
 
 									</li>
-									<li><a class="icon icon-sitemap" href="#"><span>Blog</span></a></li>
-									<li><a class="icon icon-envelope" href="#"><span>Contact</span></a></li>
+									<li><a class="icon icon-file" href="project_files.html"><span>Project Files</span></a></li>
+									<li><a class="icon icon-sitemap" href="/blog"><span>Blog</span></a></li>
+									<li><a class="icon icon-envelope" href="contact.html"><span> Contact</span></a></li> <!-- can I have a simple contact form emerge from here -->
 								</ul>
 							</nav>
 
@@ -75,12 +77,102 @@
 		<!-- Banner Wrapper -->
 			<div id="banner-wrapper">
 				<div class="inner">
-
-					
+						<!-- D3 bar chart -->
+						
 						<section id="banner" class="container">
+						
+						
+						
+							<div style="padding-bottom: -50px">
+							<script src="http://d3js.org/d3.v3.min.js"></script>
+							<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
+							<script>
+
+							var margin = {top: 0, right: 0, bottom: 0, left: 0},
+							    width = 1237 - margin.left - margin.right,
+							    height = 289 - margin.top - margin.bottom;
+
+							var formatPercent = d3.format("g");
+
+							var x = d3.scale.ordinal()
+							    .rangeRoundBands([0, width], .1);
+
+							var y = d3.scale.linear()
+							    .range([height, 0]);
+
+							var xAxis = d3.svg.axis()
+							    .scale(x)
+							    .orient("bottom");
+
+							var yAxis = d3.svg.axis()
+							    .scale(y)
+							    .orient("left")
+							    .tickFormat(formatPercent);
+
+							var tip = d3.tip()
+							  .attr('class', 'd3-tip')
+							  .offset([-10, 0])
+							  .html(function(d) {
+							    return d.letter + "<strong> :</strong> <span style='color:#CDA7FF'>" + d.frequency + "</span>";
+							  })
+
+							var svg = d3.select("div").append("svg")
+							    .attr("width", width + margin.left + margin.right)
+							    .attr("height", height + margin.top + margin.bottom)
+							  .append("g")
+							    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+							svg.call(tip);
+
+							d3.tsv("data.tsv", type, function(error, data) {
+							  x.domain(data.map(function(d) { return d.letter; }));
+							  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+							  svg.append("g")
+							      .attr("class", "x axis")
+							      .attr("transform", "translate(0," + height + ")")
+							      .call(xAxis);
+
+							  svg.append("g")
+							      .attr("class", "y axis")
+							      .call(yAxis)
+							    // .append("text")
+							      // .attr("transform", "rotate(-90)")
+							      // .attr("y", 6)
+							      // .attr("dy", ".71em")
+							      // .style("text-anchor", "end")
+							      // .text("Frequency");
+
+							  svg.selectAll(".bar")
+							      .data(data)
+							    .enter().append("rect")
+							      .attr("class", "bar")
+							      .attr("x", function(d) { return x(d.letter); })
+							      .attr("width", x.rangeBand())
+							      .attr("y", function(d) { return y(d.frequency); })
+							      .attr("height", function(d) { return height - y(d.frequency); })
+							      .on('mouseover', tip.show)
+							      .on('mouseout', tip.hide)
+
+							});
+
+							function type(d) {
+							  d.frequency = + d.frequency;
+							  return d;
+							}
+
+							</script>
+							</div>
+
+
+
+
+						
+					
+						
 							<p style="margin-bottom: 0px; margin-top: 0px">Making humanitarian data <strong>easily available</strong> and <strong>useful</strong> for decision making.</p>
 							<ul class="actions" style="margin-top: 20px;">
-								<li><a href="#" class="button button-icon icon icon-cog">Learn More about the Project</a></li>
+								<li><a href="about.html" class="button button-icon icon icon-cog">Learn More about the Project</a></li>
 							</ul>
 						</section>
 
@@ -194,6 +286,9 @@
 					</div>
 
 			</div>
+
+
+
 
 		<!-- Footer Wrapper -->
 			<div id="footer-wrapper">
