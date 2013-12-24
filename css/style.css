@@ -964,9 +964,9 @@
 		background: #fff;
 		color: #878787;
 		text-align: center;
-		border-top: solid 2px #e5e5e5;
-		border-bottom: solid 2px #e5e5e5;
-		box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5, inset 0px 8px 0px 0px #fff, inset 0px 10px 0px 0px #e5e5e5;
+		/* border-top: solid 2px #e5e5e5; */ 
+		/* border-bottom: solid 2px #e5e5e5; */
+		box-shadow: inset 0px 0px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5, inset 0px 8px 0px 0px #fff, inset 0px 10px 0px 0px #e5e5e5;   /* this adds the thin gray line above AND bellow the banner */ 
 	}
 
 		#banner-wrapper .inner
@@ -1039,8 +1039,8 @@
 	#header
 	{
 		position: relative;
-		border-bottom: solid 2px #e5e5e5;
-		box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
+		/* border-bottom: solid 2px #e5e5e5; */ /* This combined with the shadow bellow add a thin line aroudnd the banner. */
+		/* box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5; */ 
 	}
 
 		#header h1
@@ -1048,7 +1048,7 @@
 			font-family: 'Volkhov'; /* It was Arvo. */
 			font-weight: 700;
 			color: #666666;
-			text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+			/* text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1); */ /* This drops shadow under the header name. */ 
 		}
 
 			#header h1 a

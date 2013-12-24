@@ -131,7 +131,7 @@
 	
 	#banner-wrapper
 	{
-		padding: 3em 0 3em 0;
+		padding: 0em 0 0em 0;
 	}
 	
 	#main-wrapper
@@ -271,7 +271,7 @@
 		.dropotron li:hover > span,
 		.dropotron li:hover > a
 		{
-			color: #ed786a;
+			color: #CDA7FF;
 			-moz-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 			-webkit-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 			-o-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
