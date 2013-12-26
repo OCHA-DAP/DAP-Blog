@@ -2,7 +2,6 @@
 <meta charset="utf-8">
 <style>
 
-
 .axis path,
 .axis line {
   fill: none;
@@ -92,7 +91,7 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.tsv("data.tsv", type, function(error, data) {
+d3.tsv("lines-graph-data.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.letter; }));
   y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
