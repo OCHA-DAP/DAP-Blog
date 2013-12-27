@@ -44,7 +44,7 @@
 	{
 		font-family: 'Helvetica Neue';
 		font-weight: 300;
-		color: #777;
+		color: #404040;
 	}
 	
 	h1,h2,h3,h4,h5,h6
@@ -295,7 +295,7 @@
 				left: 0;
 				top: 1.5em;
 				display: block;
-				background: #878787;
+				background: #404040;
 				color: #e4e4e4;
 				width: 1.65em;
 				height: 1.65em;
@@ -446,7 +446,7 @@
 			
 				table.style1 thead
 				{
-					background: #878787;
+					background: #404040;
 					color: #fff;
 					font-weight: 400;
 					text-transform: uppercase;
@@ -504,7 +504,7 @@
 		
 			.button-alt
 			{
-				background: #878787;
+				background: #404040;
 			}
 
 				.button-alt:hover
@@ -514,7 +514,7 @@
 				
 				.button-alt:active
 				{
-					background: #878787;
+					background: #404040;
 				}
 
 /*********************************************************************************/
@@ -920,7 +920,7 @@
 	
 		.is-excerpt .date
 		{
-			background: #878787;
+			background: #404040;
 			color: #fff;
 			font-weight: 400;
 			text-transform: uppercase;
@@ -962,7 +962,7 @@
 		position: relative;
 		overflow: hidden;
 		background: #fff;
-		color: #878787;
+		color: #404040;
 		text-align: center;
 		/* border-top: solid 2px #e5e5e5; */ 
 		/* border-bottom: solid 2px #e5e5e5; */
@@ -1081,14 +1081,14 @@
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: 400;
-				color: #777;
+				color: #404040;
 				outline: 0;
 			}
 
 				#nav > ul > li > a:before
 				{
 					display: inline-block;
-					background: #878787;
+					background: #404040;
 					color: #e4e4e4;
 					width: 1.65em;
 					height: 1.65em;

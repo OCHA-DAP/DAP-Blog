@@ -2,9 +2,15 @@ List of things we need for the website
 
 
 
-Implement the CSS in the blog that I've selected. 
+match header and footer of the blog to the site. 
+	- check the divs at the footer 
+	- understand what makes the animation at the front page
 
-Experiment first with the easy blog without database. 
+change the buttons to match the site style
+
+Check the data for index_2  
+
+Work on the logo. 
 
 Change the OCHA page
 	- logo
@@ -30,6 +36,13 @@ Implement the contact page.
 Fix the subscribe button at the bottom of the pages. 
 
 Add the normalized dataset into a SQL database. (GDELT)
+
+
+
+
+// Blog Changes
+
+tools.php
 
 
 
