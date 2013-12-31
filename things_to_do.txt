@@ -1,22 +1,17 @@
 List of things we need for the website
 
-
+Fix the space at the botttom before the copyright notice. 
 
 match header and footer of the blog to the site. 
 	- check the divs at the footer 
 	- understand what makes the animation at the front page
 
-change the buttons to match the site style
-
-Check the data for index_2  
-
-Work on the logo. 
+add space to the left of the team description 
 
 Change the OCHA page
 	- logo
 	- center the button and add icon 
 
-Create the project files page. 
 
 Create the DAP projects page
 	- analytics 
@@ -25,7 +20,6 @@ Create the DAP projects page
 
 Email people about the bio and about their pictures. 	
 
-Center the description of each person in the team page. 
 
 Add a little map of locations in the team page? 
 
@@ -39,17 +33,23 @@ Add the normalized dataset into a SQL database. (GDELT)
 
 
 
+// Other
 
-// Blog Changes
+Work on the logo. 
 
-tools.php
+
+
+// Step by Step to move the blog to another server.
+
+try to move folders once again copying the same files. 
+
+tools.php -- has the side bar elements. 
 
 
 
 
 
 // Content 
-
 
 Content for the analytics part of the website. Stub of what that piece of HDx is? 
 	 - stub 

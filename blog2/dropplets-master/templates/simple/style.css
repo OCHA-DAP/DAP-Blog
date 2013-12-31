@@ -5,38 +5,8 @@ Copyright Circa75 Media, LLC (Circa75.co)
 
 *********************************************************************************************/
 
-/* Importing fonts -- based on the home page CSS. 
-*********************************************************************************************/
-
-
-@font-face
-{
-    font-family: 'FontAwesome';     
-    src: url('fonts/fontawesome-webfont.eot?v=3.1.0'); 
-    src: url('fonts/fontawesome-webfont.eot?#iefix&v=3.1.0') format('embedded-opentype'),
-         url('fonts/fontawesome-webfont.woff?v=3.1.0') format('woff'),
-         url('fonts/fontawesome-webfont.ttf?v=3.1.0') format('truetype'),
-         url('fonts/fontawesome-webfont.svg#FontAwesome') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face
-{
-    font-family: 'Font-Awesome-Social';
-    src: url('fonts/fontawesome-social-webfont.eot');
-    src: url('fonts/fontawesome-social-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/fontawesome-social-webfont.woff') format('woff'),
-         url('fonts/fontawesome-social-webfont.ttf') format('truetype'),
-         url('fonts/fontawesome-social-webfont.svg#Font-Awesome-More') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 /* Normalization
 *********************************************************************************************/
-
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}
 
@@ -45,35 +15,31 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body {
 	background: #ffffff;
-	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
-	font-weight: 300;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
 	font-size: 16px;
 	line-height: 27px;
 	color: #404040;
 	text-rendering: optimizeLegibility;
 }
 
-
 /* Typography
 *********************************************************************************************/
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Volkhov'; /* It was Arvo. */
     font-weight: 700;
-	color: #0988bb;
+	color: #303030;
 	margin-bottom: 5px;
 	max-width: 90%;
 }
 
 h1, h2, h3, h4 { 
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 24px;
     line-height: 39px;
 }
 
 h3, h4 { 
     margin-top: 20px;
-    font-weight: 700;
 }
 
 p, ul, ol {
@@ -101,14 +67,14 @@ strong {
 }
 
 a { 
-    color: #0988bb;
+    color: #303030;
     text-decoration: none;
     -moz-transition-duration: 0.1s;
     -webkit-transition-duration: 0.1s;
 }
 
 a:hover, a:focus { 
-    color: #CDA7FF;
+    color: #000000;
 }
 
 code, pre {
@@ -442,14 +408,12 @@ ul.actions li {
 
 @media (max-width: 400px) {
     
-/* Articles
-*****************************************************************************************/
-
-article {
-    padding: 40px 0;
-}
+    /* Articles
+    *****************************************************************************************/
+    
+    article {
+        padding: 40px 0;
+    }
     
     
 }
-
-
