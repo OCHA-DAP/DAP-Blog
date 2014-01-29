@@ -1,0 +1,963 @@
+/*---------------------------------------------------------------------
+ 
+	Theme Name: 	Spruce Bean Shortcodes
+	Theme URI:      http://themebeans.com/plugin/bean-shortcodes-plugin
+	Author:         ThemeBeans
+	Author URI:     http://www.themebeans.com
+	Version:        1.0
+ 
+----------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------*/
+/*	COLUMN SIZES & STYLES
+/*--------------------------------------------------------------------*/
+.bean-one-half 		{ width: 48%; }
+.bean-one-third 	{ width: 32%; }
+.bean-two-third 	{ width: 64%; }
+.bean-one-fourth 	{ width: 22%; }
+.bean-three-fourth 	{ width: 74%; }
+.bean-one-fifth 	{ width: 16.8%; }
+.bean-two-fifth 	{ width: 37.6%; }
+.bean-three-fifth 	{ width: 58.4%; }
+.bean-four-fifth 	{ width: 67.2%; }
+.bean-one-sixth 	{ width: 13.33%; }
+.bean-five-sixth 	{ width: 82.67%; }
+
+.bean-one-half,
+.bean-one-third,
+.bean-two-third,
+.bean-three-fourth,
+.bean-one-fourth,
+.bean-one-fifth,
+.bean-two-fifth,
+.bean-three-fifth,
+.bean-four-fifth,
+.bean-one-sixth,
+.bean-five-sixth {
+	float: left;
+	position: relative;
+	margin-right: 4%;
+	margin-bottom: 20px;
+	}
+
+.bean-column-last {
+	clear: right;
+	margin-right: 0!important;
+	}
+
+.bean-one-third {
+	margin-right: 2%; 
+	}
+
+
+/*--------------------------------------------------------------------*/
+/*  BUTTON STYLES
+/*--------------------------------------------------------------------*/
+input[type=submit].button { -webkit-appearance: none; } 
+
+
+/* BUTTON SIZES / RADIUS */
+.short-btn {
+	font: bold 14px/20px Helvetica, Helvetica-Neue, Arial, sans-serif!important;
+    border: none!important;
+    cursor: pointer;
+    display: inline-block;
+    background: #FFCC02;
+    padding:11px 10px!important;
+    color: #FFF!important;
+  	margin: 0px 4px 4px 0; 
+	text-align: center;
+	text-decoration: none!important;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	}
+
+.short-btn.medium {
+	padding: 13px 19px!important;
+	font-weight: bold;
+	font-size: 15px!important;
+	}
+ 
+.short-btn.large {
+	font-size: 18px!important;
+	padding: 17px 29px!important;
+	width: auto;
+	margin-bottom: 4px;
+	}	
+
+.short-btn.round {
+	padding-left: 20px!important;
+	padding-right: 20px!important; 
+	-webkit-border-radius: 1000px;
+	   -moz-border-radius: 1000px;
+	        border-radius: 1000px;
+	}
+
+
+/* BUTTON COLORS */
+.short-btn.pink 		{ background: #FFADCB; }
+.short-btn.pink:hover 	{ background-color: #fdccde; color: #e35f90!important; }
+
+.short-btn.blue 		{ background: #72BBF0; }
+.short-btn.blue:hover 	{ background-color: #a1d1f3; color: #1089e2!important; }
+
+.short-btn.black 		{ background: #2E3236; }
+.short-btn.black:hover 	{ background-color: #3e4145; }	 
+	 
+.short-btn.yellow 		{ background: #ffd900; }
+.short-btn.yellow:hover { background-color: #fbea86; color: #AA5800!important; }
+	 	 	 
+.short-btn.red 			{ background: #ff6163; }
+.short-btn.red:hover 	{ background-color: #fcc8c8; color: #DA3A3C!important; }
+		 	 
+.short-btn.green 		{ background: #9bc724; }
+.short-btn.green:hover 	{ background: #BDE74C; color: #4C6802!important; }
+	
+.short-btn.grey 		{ background: #8d8e91; }
+.short-btn.grey:hover 	{ background-color: #b5b6b8; color: #585a5e!important; }		 
+ 
+.short-btn.purple 		{ background: #b482c9; }
+.short-btn.purple:hover { background: #D9B1EB;color: #793894!important; }
+	
+.short-btn.orange 		{ background: #F5731C; }
+.short-btn.orange:hover { background: #FFB380; color: #B92500!important; }
+
+
+/*--------------------------------------------------------------------*/
+/*	FONT AWESOME (ICON BUTTONS)
+/*--------------------------------------------------------------------*/
+@font-face {
+	font-family: 'FontAwesome';
+	src: url(../_default/font/fontawesome-webfont.eot?v=3.1.0);
+	src: url(../_default/font/fontawesome-webfont.eot?#iefix&v=3.1.0) format('embedded-opentype'), url(../_default/font/fontawesome-webfont.woff?v=3.1.0) format('woff'), url(../_default/font/fontawesome-webfont.ttf?v=3.1.0) format('truetype'), url(../_default/font/fontawesome-webfont.svg#fontawesomeregular?v=3.1.0) format('svg');
+	font-weight: normal;
+	font-style: normal;
+	}
+	
+/* ICONS CORE */
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+	*margin-right: .3em;
+	}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	text-decoration: inherit;
+	display: inline-block;
+	speak: none;
+	}
+
+/* LINK ROLLOVER */
+a [class^="icon-"],
+a [class*=" icon-"],
+a [class^="icon-"]:before,
+a [class*=" icon-"]:before {
+	display: inline;
+	}
+
+.icon-arrow-down:before 		{content: "\f063";}
+.icon-arrow-left:before 		{content: "\f060";}
+.icon-arrow-right:before 		{content: "\f061";}
+.icon-arrow-up:before 			{content: "\f062";}
+.icon-bookmark:before 			{content: "\f02e";}
+.icon-camera:before 			{content: "\f030";}
+.icon-camera-retro:before 		{content: "\f083";}
+.icon-cloud:before 				{content: "\f0c2";}
+.icon-cloud-download:before 	{content: "\f0ed";}
+.icon-cloud-upload:before 		{content: "\f0ee";}
+.icon-code:before 				{content: "\f121";}
+.icon-coffee:before 			{content: "\f0f4";}
+.icon-cog:before 				{content: "\f013";}
+.icon-cogs:before 				{content: "\f085";}
+.icon-comments:before 			{content: "\f086";}
+.icon-envelope:before 			{content: "\f003";}
+.icon-eye-open:before 			{content: "\f06e";}
+.icon-exclamation-sign:before	{content: "\f06a";}
+.icon-facebook:before 			{content: "\f09a";}
+.icon-file:before 				{content: "\f016";}
+.icon-film:before 				{content: "\f008";}
+.icon-globe:before 				{content: "\f0ac";}
+.icon-inbox:before 				{content: "\f01c";}
+.icon-link:before 				{content: "\f0c1";}
+.icon-magic:before 				{content: "\f0d0";}
+.icon-music:before 				{content: "\f001";}
+.icon-ok:before 				{content: "\f00c";}
+.icon-pinterest:before 			{content: "\f0d2";}
+.icon-plus:before 				{content: "\f067";}
+.icon-refresh:before 			{content: "\f021";}
+.icon-rocket:before 			{content: "\f135";}
+.icon-remove:before 			{content: "\f00d";}
+.icon-rss:before 				{content: "\f09e";}
+.icon-search:before 			{content: "\f002";}
+.icon-shopping-cart:before 		{content: "\f07a";}
+.icon-signal:before 			{content: "\f012";}
+.icon-star:before 				{content: "\f005";}
+.icon-tasks:before 				{content: "\f0ae";}
+.icon-trophy:before 			{content: "\f091";}
+.icon-user:before 				{content: "\f007";}
+.icon-wrench:before 			{content: "\f0ad";}
+
+	
+/*--------------------------------------------------------------------*/
+/*	TABS
+/*--------------------------------------------------------------------*/
+.bean-tabs.ui-tabs .ui-tabs-hide {
+    position: absolute;
+    left: -10000px;
+	}
+
+.bean-tabs {
+	background: none;
+	margin: 0 0 0 0;
+
+	}
+
+.bean-tabs ul.bean-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	float: none;
+	}
+
+.bean-tabs ul.bean-nav li {
+	float: left;
+	position: relative;
+	margin: 0 3px -1px 0;
+	z-index: 10;
+	list-style: none;
+	}
+
+.bean-tabs ul.bean-nav li a {
+	background-color: #F6F8FB;
+	text-transform: uppercase;
+	font: bold 13px/30px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border: 1px solid #BBC1CA;
+	border-bottom: none;
+	display: block;
+	overflow: hidden;
+	padding: 3px 10px;
+	height: 34px;
+	margin: 0;
+	text-decoration: none;
+	color: #2A3034;
+	-webkit-border-radius: 3px 3px 0px 0px;
+	   -moz-border-radius: 3px 3px 0px 0px;
+	        border-radius: 3px 3px 0px 0px;
+	}
+	
+.bean-tabs ul.bean-nav li a:hover {
+	background: #FFF;
+	margin: 0;
+	}
+
+.bean-tabs ul.bean-nav li a:focus {
+	background: #FFF;
+	margin: 0;
+	}
+
+.ui-tabs-nav .ui-state-active a {
+	background: #FFF!important;
+	}
+	
+.bean-tabs .bean-tab {
+	background: #fff;
+	padding: 12px;
+	border: 1px solid #B9BDCE;
+	color: #2A3034;
+	float: left;
+	-webkit-border-radius: 0px 0px 3px 3px;
+	   -moz-border-radius: 0px 0px 3px 3px;
+	        border-radius: 0px 0px 3px 3px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);                
+	}
+
+
+/*--------------------------------------------------------------------*/
+/*	TOGGLES
+/*--------------------------------------------------------------------*/
+.bean-toggle { 
+	margin: 0 0 -1px 0; 
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+.bean-toggle .bean-toggle-title {
+	display: block;
+	font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border: 1px solid #BBC1CA;
+	color: #2A3034;
+	margin-bottom: 7px;
+	text-transform: uppercase;
+	padding: 12px 20px 12px 16px; 
+	background: #FFF;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	-webkit-transition: all 0.3s ;
+	   -moz-transition: all 0.3s ;
+		-ms-transition: all 0.3s ;
+		    transition: all 0.3s ;
+			
+		}
+	
+.bean-toggle .bean-toggle-title:hover {	background: #F6F8FB; color: #2A3034; }
+
+.bean-toggle-title.ui-state-active:hover {
+	background: #F6F8FB;
+	} 
+	
+.bean-toggle .ui-state-active { 
+	background: #F6F8FB;
+	-webkit-border-radius: 3px 3px 0px 0px;
+	   -moz-border-radius: 3px 3px 0px 0px;
+	        border-radius: 3px 3px 0px 0px;
+	}
+	
+.bean-toggle-inner {
+	background: #FFF;
+	border: 1px solid #BBC1CA;
+	border-top: none!important;	
+	margin-top: -7px;
+	margin-bottom: 7px;
+	-webkit-border-radius: 0px 0px 3px 3px;
+	   -moz-border-radius: 0px 0px 3px 3px;
+	        border-radius: 0px 0px 3px 3px;
+	}
+
+.bean-toggle .target {
+	color: #2A3034;
+	margin: 0px 17px 20px 17px;
+	padding-top: 16px;
+	}
+	
+.bean-toggle span.ui-icon {
+    background: url(images/toggle.png) -10px -10px no-repeat;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin: -4px 0 0 0;
+	}
+
+.bean-toggle .ui-state-active .ui-icon { 
+	background-position: -40px -10px; 
+	}
+
+ 	
+/*--------------------------------------------------------------------*/
+/*  LIST STYLES
+/*--------------------------------------------------------------------*/
+.shortcode-list {
+	margin: 40px 20px;
+	}
+
+.shortcode-list ul li {
+	list-style: disc; 
+	color: #96999D;
+	margin-left: 20px;
+	padding-left: 5px;
+	}
+	
+	
+/*--------------------------------------------------------------------*/
+/*	MESSAGE BOX NOTIFICATIONS
+/*--------------------------------------------------------------------*/
+.bean-alert {
+	background-color: #f0f0f0;
+	color: #2A3034;
+	font: 15px/24px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin: 20px 0;
+	padding: 17px 50px 17px 20px;
+	position: relative;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	}
+
+.bean-alert.note 	{ background-color: #fbea86; color: #AA5800; }	
+.bean-alert.info 	{ background-color: #a1d1f3; color: #17335b; }
+.bean-alert.success { background-color: #BDE74C; color: #4C6802; }	
+.bean-alert.error   { background-color: #fcc8c8; color: #DA3A3C; }
+
+.bean-alert .alert-close {
+	background-image: url(images/close.png);
+	cursor: pointer; 
+	height: 16px;
+	position: absolute;
+	right: 17px;
+	top: 17px;
+	width: 16px;	
+	}
+	
+.bean-alert .alert-close:hover { opacity: .5; }	
+
+.bean-alert.info .alert-close 	 { background-position: 0px -16px; }
+.bean-alert.success .alert-close { background-position: 0px -32px; }		
+.bean-alert.error .alert-close 	 { background-position: 0px -48px; }	
+
+									
+/*--------------------------------------------------------------------*/
+/*	SOCIAL MEDIA ICONS
+/*--------------------------------------------------------------------*/
+a.social-icons {
+	display: block;
+	position: relative;
+	width: 37px;
+	height: 37px;
+	}
+
+.icon32 {
+	display: block; 
+	width: 40px; 
+	height: 40px; 
+	margin-right: 4px;
+	margin-bottom: 4px;
+	float: left;
+	}
+
+.icon32.iconSocial { 
+	background:url(images/social.png);
+	-webkit-border-radius: 5px;	  
+	   -moz-border-radius: 5px;
+	    -ms-border-radius: 5px;
+			border-radius: 5px;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	    -ms-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	     	transition: all 0.3s;
+	}
+
+.icon32.iconSocial.behance 			{ background-color: #006cff; background-position: -490px -69px; }
+.icon32.iconSocial.delicious 		{ background-color: #0078b7; background-position: -370px -69px; }
+.icon32.iconSocial.digg 			{ background-color: #00549c; background-position: -129px -69px  }
+.icon32.iconSocial.dribbble 		{ background-color: #f8619e; background-position: -371px -9px;  }
+.icon32.iconSocial.facebook			{ background-color: #4973d2; background-position: -70px -10px;  }
+.icon32.iconSocial.flickr 			{ background-color: #f759aa; background-position: -70px -69px;  }
+.icon32.iconSocial.forrst 			{ background-color: #758f67; background-position: -10px -70px;  }
+.icon32.iconSocial.foursquare 		{ background-color: #02b0e8; background-position: -431px -69px; }
+.icon32.iconSocial.github 			{ background-color: #3e78aa; background-position: -189px -69px; }
+.icon32.iconSocial.googleplus 		{ background-color: #0a9d35; background-position: -130px -10px; }
+.icon32.iconSocial.linkedin 		{ background-color: #0b84c3; background-position: -190px -9px;  }
+.icon32.iconSocial.pinterest 		{ background-color: #eb5655; background-position: -249px -70px; }
+.icon32.iconSocial.rss 				{ background-color: #fcae34; background-position: -310px -9px;  }
+.icon32.iconSocial.stumbleupon 		{ background-color: #f94e20; background-position: -310px -69px; }
+.icon32.iconSocial.twitter 			{ background-color: #02b0e8; background-position: -10px -9px;   }
+.icon32.iconSocial.vimeo 			{ background-color: #9dc647; background-position: -431px -10px; }
+.icon32.iconSocial.youtube 			{ background-color: #f44220; background-position: -489px -8px;  }
+.icon32.iconSocial.zerply 			{ background-color: #abe06c; background-position:  -250px -9px; }
+ 
+.icon32.iconSocial.behance:hover,
+.icon32.iconSocial.delicious:hover,
+.icon32.iconSocial.digg:hover,	
+.icon32.iconSocial.dribbble:hover, 	
+.icon32.iconSocial.facebook:hover, 	
+.icon32.iconSocial.flickr:hover,	
+.icon32.iconSocial.forrst:hover,	
+.icon32.iconSocial.foursquare:hover,
+.icon32.iconSocial.github:hover, 	 
+.icon32.iconSocial.googleplus:hover,
+.icon32.iconSocial.linkedin:hover,
+.icon32.iconSocial.pinterest:hover,		
+.icon32.iconSocial.rss:hover,
+.icon32.iconSocial.stumbleupon:hover, 
+.icon32.iconSocial.twitter:hover,	
+.icon32.iconSocial.vimeo:hover,			
+.icon32.iconSocial.youtube:hover,
+.icon32.iconSocial.zerply:hover { 
+	background-color: #2A3034; 
+	}	
+
+	
+/*--------------------------------------------------------------------*/
+/*	HIGHLIGHT
+/*--------------------------------------------------------------------*/
+	span.highlight {
+	background-image: url(images/highlight-left.png),url(images/highlight-center.png),
+	url(images/highlight-right.png);
+	background-repeat: repeat-x;
+	background-repeat: no-repeat, repeat-x, no-repeat;
+	background-position: center;
+	background-position: left,center,right;
+	background-clip: padding-box, content-box, padding-box;
+	color: #A5651A;
+	padding: 0 20px;
+	margin: 0 -6px; 
+	} 
+ 
+ 
+/*--------------------------------------------------------------------*/
+/* CUSTOM PULL BLOCK QUOTE
+/*--------------------------------------------------------------------*/
+.bean-quote {
+	background-color: #FFCC02;
+	color: #FFF;
+	font-size: 22px;
+	float: right;
+	line-height: 28px;
+	margin: 0 0 20px 30px;
+	padding: 12px 20px 18px;
+	position: relative;
+	text-align: right;
+	width: 35%;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;	
+	}  
+
+
+/*--------------------------------------------------------------------*/
+/*	NOTE SHORTCODE
+/*--------------------------------------------------------------------*/
+div.bean-note {
+	text-align: center;
+	border: 1px solid #ADADAD;
+	padding: 15px;
+	background-color: #FDFDFD;
+	color: #414141;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 23px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+	   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+	        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	}
+
+div.bean-note a { 
+	color: #FFCC02;
+	}
+ 
+/*--------------------------------------------------------------------*/
+/*	PRETTIFY CUSTOM BEAN THEME
+/*--------------------------------------------------------------------*/
+pre.prettyprint { 
+	background-color: #FFF; 
+	background-image: none;
+	border: 1px solid #BBC1CA;
+	display: block;
+	font: 13px/11px Consolas, Courier, "Courier New", monospace;
+	height: auto;
+	margin: 40px 0 10px;
+	max-height: 350px;
+	padding: 20px 22px;
+	overflow: auto;
+	white-space: pre-wrap; 
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;  
+	white-space: -o-pre-wrap; 
+	word-wrap: break-word;  
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);	
+		}
+	
+/* IF FULLHEIGHT IS SELECTED */
+pre.prettyprint.linenums.full {
+	max-height: 100%;
+	} 
+	
+pre.prettyprint li {
+	list-style: inherit;
+	list-style-type:decimal;
+	line-height: 20px;
+	}
+		
+
+/* LINE NUMBERS */	
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #D6DBE6 }
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/*li.L0,li.L2,li.L4,li.L6,li.L8 { background-color: rgba(247, 247, 248, 0.55);}*/
+
+		
+/* DEFAULT COLORS */			
+pre .nocode { background-color: none; color: #2A333B }
+pre .str { color: #FF8220 } 	/* STRING*/
+pre .kwd { color: #F3736F }
+pre .com { color: #b2b2b2 } 	/* COMMENT */
+pre .typ { color: #228822 } 	/* TYPE */
+pre .lit { color: #61A558 } 	/* LITERAL */
+pre .pun { color: #6279bd }     /* PUNCTUATION*/
+pre .pln { color: #6279bd }     /* PLAINTEXT */
+pre .tag { color: #f0e68c } 	/* HTML TAG */
+pre .atn { color: #bdb76b } 	/* ATTRIBUTE NAME */
+pre .atv { color: #ffa0a0 } 	/* ATTRIBUTE VALUE */
+pre .dec { color: #98fb98 } 	/* DECIMAL */
+
+
+/*--------------------------------------------------------------------*/
+/*	MODAL POPUP SHORTCODE
+/*--------------------------------------------------------------------*/
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #FFF;
+	}
+	
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1050;
+	width: 600px;
+	margin: -140px 0 0 -280px;
+	overflow: auto;
+	-webkit-background-clip: padding-box;
+	   -moz-background-clip: padding-box;
+	        background-clip: padding-box;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	}
+	
+.modal-header .close { margin-top: 2px; }
+	
+.modal-header h3 {
+	margin: 0;
+	line-height: 30px;
+	}
+	
+.modal-body {
+	max-height: 400px;
+	padding-top: 15px;
+	overflow-y: auto;
+	line-height: 30px;
+	font-size: 16px;
+	color: #22272A;
+	}
+
+.modal-body strong,	
+.modal-body b,
+.modal-body a { color: #22272A; }	
+	
+.modal-form { margin-bottom: 0; }
+ 	
+.modal .close {
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 18px;
+	color: #22272A;
+	}
+ 	
+.modal .close:hover { color: #FFCC02; } 
+ 
+.hide { display: none; }
+  
+/* MODAL CSS3 ANIMATIONS */
+.animated.BeanModalBounceIn {
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	    -ms-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	   -moz-animation-duration: 1s;
+	    -ms-animation-duration: 1s;
+	     -o-animation-duration: 1s;
+	}
+	
+@-webkit-keyframes BeanModalFadeIn {
+	0% {opacity: 0;}	
+	100% {opacity: .95;}
+	}
+@-moz-keyframes BeanModalFadeIn {
+	0% {opacity: 0;}	
+	100% {opacity: .95;}
+	}
+@-o-keyframes BeanModalFadeIn {
+	0% {opacity: 0;}	
+	100% {opacity: .95;}
+	}
+@keyframes BeanModalFadeIn {
+	0% {opacity: 0;}	
+	100% {opacity: .95;}
+	}
+
+.BeanModalFadeIn {
+	-webkit-animation-name: BeanModalFadeIn;
+	   -moz-animation-name: BeanModalFadeIn;
+	     -o-animation-name: BeanModalFadeIn;
+	-webkit-animation-duration: .6s;
+	   -moz-animation-duration: .6s;
+	    -ms-animation-duration: .6s;
+	     -o-animation-duration: .6s;        
+	}
+	
+@-webkit-keyframes BeanModalBounceIn {
+	0% { opacity: 0; -webkit-transform: translateY(-2000px); }
+	60% { opacity: 1; -webkit-transform: translateY(30px); }
+	80% { -webkit-transform: translateY(-10px); }
+	100% { -webkit-transform: translateY(0); }
+	}
+@-moz-keyframes BeanModalBounceIn {
+	0% { opacity: 0; -moz-transform: translateY(-2000px); }
+	60% { opacity: 1; -moz-transform: translateY(30px); }
+	80% { -moz-transform: translateY(-10px); }
+	100% { -moz-transform: translateY(0); }
+	}
+@-o-keyframes BeanModalBounceIn {
+	0% { opacity: 0; -o-transform: translateY(-2000px); }
+	60% { opacity: 1; -o-transform: translateY(30px); } 
+	80% { -o-transform: translateY(-10px); } 
+	100% { -o-transform: translateY(0); }
+	}
+@keyframes BeanModalBounceIn {
+	0% { opacity: 0; transform: translateY(-2000px); }
+	60% { opacity: 1; transform: translateY(30px); }
+	80% { transform: translateY(-10px); }
+	100% { transform: translateY(0); }
+	}
+
+.BeanModalBounceIn {
+	-webkit-animation-name: BeanModalBounceIn;
+	   -moz-animation-name: BeanModalBounceIn;
+	     -o-animation-name: BeanModalBounceIn;
+	-webkit-animation-delay: .3s;
+	   -moz-animation-delay: .3s;
+	    -ms-animation-delay: .3s;
+	     -o-animation-delay: .3s;
+	} 
+
+
+/*--------------------------------------------------------------------*/
+/*	FEATURE AREAS
+/*--------------------------------------------------------------------*/
+.featurearea {
+	overflow: hidden;
+	float: left;
+	min-height: 1px;
+	position: relative;
+	margin: 20px 0 10px 0;
+	}
+	
+.featurearea p { 
+	text-align: left;
+	-webkit-transition: all .1s ease-in-out;
+	   -moz-transition: all .1s ease-in-out;
+		-ms-transition: all .1s ease-in-out; 	   
+		 -o-transition: all .1s ease-in-out;
+	        transition: all .1s ease-in-out; 
+	}
+	
+.featurearea_icon .icon {
+	background: no-repeat 50% 50% #FFCC02;
+	width: 50px;
+	height: 50px;
+	margin: 0 15px 0 0;
+	float: left;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;          
+	-webkit-transition: all .1s ease-in-out;
+	   -moz-transition: all .1s ease-in-out;
+		-ms-transition: all .1s ease-in-out; 	   
+		 -o-transition: all .1s ease-in-out;
+	        transition: all .1s ease-in-out;         
+	}
+
+.featurearea_content { overflow: hidden; }
+
+.featurearea .featurearea_content .featurearea_content_title {
+	color: #22272A;
+	margin: -6px 0 4px 0;
+	font: normal 19px/29px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-transform: none;
+	}
+
+.featurearea_icon .book 		{ background-image: url(../_default/images/feature-areas/book.png); 		}
+.featurearea_icon .calendar 	{ background-image: url(../_default/images/feature-areas/calendar.png); 	}
+.featurearea_icon .camera 		{ background-image: url(../_default/images/feature-areas/camera.png); 		}
+.featurearea_icon .chart 		{ background-image: url(../_default/images/feature-areas/chart.png); 		}
+.featurearea_icon .check 		{ background-image: url(../_default/images/feature-areas/check.png); 		}
+.featurearea_icon .crop 		{ background-image: url(../_default/images/feature-areas/crop.png); 		}
+.featurearea_icon .danger 		{ background-image: url(../_default/images/feature-areas/danger.png); 		}
+.featurearea_icon .download 	{ background-image: url(../_default/images/feature-areas/download.png); 	}
+.featurearea_icon .fullscreen 	{ background-image: url(../_default/images/feature-areas/fullscreen.png); 	}
+.featurearea_icon .ipad 		{ background-image: url(../_default/images/feature-areas/ipad.png); 		}
+.featurearea_icon .mail 		{ background-image: url(../_default/images/feature-areas/mail.png); 		}
+.featurearea_icon .no 			{ background-image: url(../_default/images/feature-areas/no.png); 			}
+.featurearea_icon .notification { background-image: url(../_default/images/feature-areas/notification.png); }
+.featurearea_icon .package 		{ background-image: url(../_default/images/feature-areas/package.png); 		}
+.featurearea_icon .pages 		{ background-image: url(../_default/images/feature-areas/pages.png); 		}
+.featurearea_icon .printer 		{ background-image: url(../_default/images/feature-areas/printer.png); 		}
+.featurearea_icon .reload 		{ background-image: url(../_default/images/feature-areas/reload.png); 		}
+.featurearea_icon .settings 	{ background-image: url(../_default/images/feature-areas/settings.png); 	}
+.featurearea_icon .support	 	{ background-image: url(../_default/images/feature-areas/support.png); 		}
+.featurearea_icon .upload 		{ background-image: url(../_default/images/feature-areas/upload.png); 		}
+.featurearea_icon .wifi 		{ background-image: url(../_default/images/feature-areas/wifi.png); 		}
+
+  		 			  
+/*--------------------------------------------------------------------*/
+/*  RESPONSIVE CSS
+/*--------------------------------------------------------------------*/ 			
+@media only screen 
+and (max-width: 767px) {
+	.bean-one-half,
+	.bean-one-third,
+	.bean-two-third,
+	.bean-three-fourth,
+	.bean-one-fourth,
+	.bean-one-fifth,
+	.bean-two-fifth,
+	.bean-three-fifth,
+	.bean-four-fifth,
+	.bean-one-sixth,
+	.bean-five-sixth {
+			margin-right: 0;
+			width: 100%;
+			}
+			
+	.modal { 
+		position: fixed; 
+		top: 25% !important; 
+		right: 5%; 
+		left: 5%; 
+		bottom: 5%; 
+		width: auto; 
+		height: auto;
+		margin: 0; 
+		}
+	.modal-body { height: 60%; }
+	.modal-body { 
+		max-height: 500px; 
+		overflow-y: auto; 
+		}		
+}
+
+
+/*--------------------------------------------------------------------*/
+/*	iPHONE/SMARTPHONE GENERAL
+/*--------------------------------------------------------------------*/
+@media only screen 
+and (max-width : 320px)
+and (orientation : portrait) {
+	.bean-toggle span.ui-icon { background-image: none!important; }
+}
+
+
+/*--------------------------------------------------------------------*/
+/*	RETINA CSS
+/*--------------------------------------------------------------------*/
+@media all 
+and (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 192dpi) {
+	.bean-toggle span.ui-icon { 
+		background-image: url(images/retina/toggle@2x.png);
+		background-size: 60px 60px;
+		}
+	.icon32.iconSocial {
+		background-image: url(images/retina/social@2x.png);
+		background-size: 540px 120px;
+		}
+	.bean-alert .alert-close  {
+		background-image: url(images/retina/close@2x.png);
+		background-size: 16px 64px;
+		}	
+	.featurearea_icon .book { 
+		background-image: url(../_default/images/feature-areas/retina/book@2x.png); 			
+		background-size: 16px 12px;
+		}
+	.featurearea_icon .calendar { 
+		background-image: url(../_default/images/feature-areas/retina/calendar@2x.png); 		
+		background-size: 14px 15px;
+		}
+	.featurearea_icon .camera { 
+		background-image: url(../_default/images/feature-areas/retina/camera@2x.png); 		
+		background-size: 16px 13px;
+		}
+	.featurearea_icon .chart { 
+		background-image: url(../_default/images/feature-areas/retina/chart@2x.png); 			
+		background-size: 14px 14px;
+		}
+	.featurearea_icon .check {  
+		background-image: url(../_default/images/feature-areas/retina/check@2x.png); 			
+		background-size: 17px 15px;
+		}
+	.featurearea_icon .crop { 
+		background-image: url(../_default/images/feature-areas/retina/crop@2x.png); 			
+		background-size: 16px 14px;
+		}
+	.featurearea_icon .danger { 
+		background-image: url(../_default/images/feature-areas/retina/danger@2x.png); 		
+		background-size: 14px 14px;
+		}
+	.featurearea_icon .download { 
+		background-image: url(../_default/images/feature-areas/retina/download@2x.png); 		
+		background-size: 12px 15px;
+		}
+	.featurearea_icon .fullscreen { 
+		background-image: url(../_default/images/feature-areas/retina/fullscreen@2x.png); 	
+		background-size: 18px 14px;
+		}
+	.featurearea_icon .ipad { 
+		background-image: url(../_default/images/feature-areas/retina/ipad@2x.png); 			
+		background-size: 13px 16px;
+		}
+	.featurearea_icon .mail { 
+		background-image: url(../_default/images/feature-areas/retina/mail@2x.png); 			
+		background-size: 16px 16px;
+		}
+	.featurearea_icon .no { 
+		background-image: url(../_default/images/feature-areas/retina/no@2x.png); 			
+		background-size: 15px 15px;
+		}
+	.featurearea_icon .notification { 
+		background-image: url(../_default/images/feature-areas/retina/notification@2x.png); 	
+		background-size: 16px 15px;
+		}
+	.featurearea_icon .package { 
+		background-image: url(../_default/images/feature-areas/retina/package@2x.png); 		
+		background-size: 14px 13px;
+		}
+	.featurearea_icon .pages { 
+		background-image: url(../_default/images/feature-areas/retina/pages@2x.png); 			
+		background-size: 16px 16px;
+		}
+	.featurearea_icon .printer { 
+		background-image: url(../_default/images/feature-areas/retina/printer@2x.png); 		
+		background-size: 16px 13px;
+		}
+	.featurearea_icon .reload { 
+		background-image: url(../_default/images/feature-areas/retina/reload@2x.png); 		
+		background-size: 12px 14px;
+		}
+	.featurearea_icon .settings { 
+		background-image: url(../_default/images/feature-areas/retina/settings@2x.png); 		
+		background-size: 16px 15px;
+		}
+	.featurearea_icon .support { 
+		background-image: url(../_default/images/feature-areas/retina/support@2x.png); 		
+		background-size: 16px 16px;
+		}
+	.featurearea_icon .upload { 
+		background-image: url(../_default/images/feature-areas/retina/upload@2x.png); 		
+		background-size: 16px 12px;
+		}
+	.featurearea_icon .wifi { 
+		background-image: url(../_default/images/feature-areas/retina/wifi@2x.png); 			
+		background-size: 15px 13px;
+		}	
+		
+	}		}

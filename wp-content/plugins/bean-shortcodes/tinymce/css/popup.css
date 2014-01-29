@@ -1,0 +1,199 @@
+/*----------------------------------------------------------------------
+ 
+	Content: Popup CSS for Shortcodes. 
+	Author:  ThemeBeans of http://www.themebeans.com
+	
+ 	TABLE OF CONTENTS:
+ 
+ 	01. GLOBAL
+ 	02. FORM GENERAL
+ 	03. INPUT STYLES	
+ 	    A. All
+ 	    B. Textarea
+ 	    C. Select
+ 	    D. Description Text
+ 
+ ----------------------------------------------------------------------*/
+ 
+/*--------------------------------------------------------------------*/
+/*	01. GLOBAL
+/*--------------------------------------------------------------------*/
+#TB_window {
+	border: none!important;
+	}
+#bean-popup {
+	width: 560px;
+	font: 12px/20px Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	}
+	
+#bean-popup * { font: 12px/20px Arial, Helvetica, sans-serif;	}
+
+#bean-sc-form-wrap {
+	width: 550px;
+	float: left;
+	}
+	
+#bean-sc-form-wrap #bean-sc-form-head {
+	width: 520px;
+	padding: 15px 15px 15px 12px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 1;
+	background-color: #404040;
+	}
+	
+#bean-popup.no_preview #bean-sc-form-wrap #bean-sc-form-head { width: 534px; }
+#bean-sc-form-wrap #bean-sc-form {
+	width: 490px;
+	padding: 15px;
+	}
+
+.field .button-primary {
+	height: 30px!important; 
+	line-height: 28px!important; 
+	padding: 0 12px 2px!important;
+	}
+
+
+/*--------------------------------------------------------------------*/
+/*	02. FORM GENERAL
+/*--------------------------------------------------------------------*/
+#bean-sc-form-table { width: 530px; }
+
+#bean-sc-form-table tbody tr.form-row {
+	display: block;
+	padding: 8px 0;
+	border-bottom: solid 1px #F0F0F0;
+	}
+	
+#bean-sc-form-table tbody:last-child tr.form-row { border-bottom: none; }
+
+#bean-sc-form-table tbody tr.form-row .label {
+	width: 130px;
+	text-align: left;
+	vertical-align: top;
+	line-height: 35px;
+	padding-right: 20px;
+	font-weight: bold;
+	}
+	
+#bean-sc-form-table tbody tr.form-row .field { width: 370px; }
+
+#bean-sc-form-table tbody tr.form-row .bean-insert { color: #fff; }
+
+
+/*  A.  Child rows, sortable -----------------------------------------*/
+#bean-sc-form-table .has-child #form-child-add {
+	display: block;
+	width: 520px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 20px;
+	font-size: 13px;
+	text-align: center;
+	color: #333;
+	outline: none;
+	}
+#bean-sc-form-table .has-child .child-clone-rows { display: block; }
+
+#bean-sc-form-table .has-child .child-clone-rows .child-clone-row {
+	padding: 8px 15px;
+	background: #f5f5f5;
+	border: solid 1px #dfdfdf;
+	margin-bottom: 10px;
+	cursor: move;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	}
+	
+#bean-sc-form-table .has-child .sortable-placeholder {
+	border: dashed 1px #bbb;
+	margin-bottom: 10px;
+	-moz-border-radius: 3px;
+	border-radius: 5px;
+	background: #f5f5f5;
+	height: 40px;
+	}
+	
+#bean-sc-form-table .has-child .child-clone-rows .child-clone-row .child-clone-row-form { display: block; }
+
+#bean-sc-form-table .has-child .child-clone-rows .child-clone-row .child-clone-row-form .child-clone-row-form-row {
+	display: block;
+	padding: 5px 0;
+	}
+	
+#bean-sc-form-table .has-child .child-clone-rows .child-clone-row .child-clone-row-form .child-clone-row-form-row .child-clone-row-label label {
+	display: block;
+	font-weight: bold;
+	padding-bottom: 7px;
+	line-height: 1;
+	}
+	
+#bean-sc-form-table .has-child .child-clone-rows .child-clone-row .child-clone-row-remove {
+	color: #FF0000;
+	padding: 1px;
+	}
+	
+#bean-sc-form-table .has-child .child-clone-rows .child-clone-row .child-clone-row-remove:hover {
+	color: #fff;
+	background: #FF0000;
+	}
+
+#content_bean_button { outline: none; }
+
+
+
+/*--------------------------------------------------------------------*/
+/*	03. INPUT STYLES
+/*--------------------------------------------------------------------*/
+#bean-sc-form-table tbody tr.form-row .bean-form-text,
+#bean-sc-form-table tbody tr.form-row .bean-form-textarea{
+	width: 370px;
+	padding: 5px 10px;
+	-webkit-appearance:none;
+	}
+
+#bean-sc-form-table tbody tr.form-row .bean-form-text:focus,
+#bean-sc-form-table tbody tr.form-row .bean-form-textarea:focus {
+ 	outline:none;
+	}
+	
+	
+/*  A.  All ----------------------------------------------------------*/
+#bean-sc-form-table tbody tr.form-row .bean-form-select {
+	width: 370px;
+	border: 1px solid #CFCFCF;
+	}
+	
+#bean-sc-form-table tbody tr.form-row.has-child .bean-form-text,
+#bean-sc-form-table tbody tr.form-row.has-child .bean-form-textarea,
+#bean-sc-form-table tbody tr.form-row.has-child .bean-form-select {
+	background: #fff;
+	width: 485px;
+	}
+
+/*  B.  Textarea -----------------------------------------------------*/
+#bean-sc-form-table tbody tr.form-row .bean-form-textarea { height: 120px; }
+#bean-sc-form-table tbody tr.form-row.has-child .bean-form-textarea { height: 100px; }
+
+/*  C.  Select -------------------------------------------------------*/
+#bean-sc-form-table tbody tr.form-row .bean-form-select {
+	display: block;
+	}
+	
+#bean-sc-form-table tbody tr.form-row.has-child .bean-form-select {
+	width: auto;
+	}
+
+/*  D.  Description Text ---------------------------------------------*/
+#bean-sc-form-table tbody tr.form-row .field .bean-form-desc,
+#bean-sc-form-table tbody tr.form-row .child-clone-row-desc {
+	display: block;
+	font-size:  12px;
+	color: #B9B9B9;
+	padding-top: 3px;
+	}
