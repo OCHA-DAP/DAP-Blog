@@ -2,7 +2,7 @@
 /* Form base theme */
 .mc4wp-form { box-shadow: none !important; -webkit-box-shadow: none; -moz-box-shadow: none; }
 .mc4wp-form p{ margin:0 0 15px; }
-.mc4wp-form label{ font-size:1em; margin:5px 0; }
+.mc4wp-form label{ font-size:1em; margin:5px 0; color: #fff;}
 
 .mc4wp-form input[type="text"],
 .mc4wp-form input[type="email"],

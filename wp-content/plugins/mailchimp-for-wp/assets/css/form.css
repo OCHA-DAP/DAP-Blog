@@ -2,7 +2,7 @@
 /* MailChimp for WP - Default Form Styles */
 .mc4wp-form{ margin:1em 0; }
 .mc4wp-form p{ text-align:left; }
-.mc4wp-form label{ display:block; font-weight:bold; margin-bottom:3px; text-align:left;  }
+.mc4wp-form label{ display:block; font-weight:bold; margin-bottom:3px; text-align:left;  color: #fff;}
 .mc4wp-form label > span, .mc4wp-form li > label{ font-weight: normal; }
 
 .mc4wp-form input[type="text"],
