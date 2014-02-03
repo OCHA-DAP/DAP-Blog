@@ -24,7 +24,7 @@ Please follow the step-by-step bellow for testing:
         
 **[4]** Check if the RSS feed is working in the footer. 
         
-**[5]** Add your email to the newslatter in the page footer.
+**[5]** Add your email to the newsletter in the page footer.
         
 **[6]** Reduce and increase the page width to test responsiveness and test the navigation links in the mobile version.
         
