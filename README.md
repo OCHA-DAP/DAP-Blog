@@ -37,3 +37,10 @@ Please follow the step-by-step bellow for testing:
 
 
 If you find *any* issues, please use the issue tracker on this GitHub repo. For something major, please send me an email at capelo@un.org
+
+
+Usage Notes
+-----------
+
+Authors, please register your *official* email address with gravatar.com so the blog can pull whatever image you chose to display your profile image and use it in our posts. 
+
