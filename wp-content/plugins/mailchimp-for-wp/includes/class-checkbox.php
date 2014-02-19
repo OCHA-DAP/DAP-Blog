@@ -1,5 +1,11 @@
 <?php
 
+if( ! defined("MC4WP_LITE_VERSION") ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+
 class MC4WP_Lite_Checkbox
 {
 	private $showed_checkbox = false;
@@ -74,8 +80,9 @@ class MC4WP_Lite_Checkbox
 	public function initialize()
 	{
 		if(function_exists("wpcf7_add_shortcode")) {
-			wpcf7_add_shortcode('mc4wp_checkbox', array($this, 'get_checkbox'));
-			add_action('wpcf7_mail_sent', array($this, 'subscribe_from_cf7'));
+			wpcf7_add_shortcode( 'mc4wp_checkbox', array( $this, 'get_checkbox') );
+			add_action( 'wpcf7_posted_data', array( $this, 'alter_cf7_data') );
+			add_action( 'wpcf7_mail_sent', array( $this, 'subscribe_from_cf7' ) );
 		}
 
 		// catch-all (for manual integrations with third-party forms)
@@ -87,12 +94,32 @@ class MC4WP_Lite_Checkbox
 	public function get_checkbox($args = array())
 	{
 		$opts = mc4wp_get_options('checkbox');
+
 		$label = isset($args['labels'][0]) ? $args['labels'][0] : $opts['label'];
 		$checked = $opts['precheck'] ? "checked" : '';
+
+		// CF7 checkbox?
+		if( is_array( $args ) && isset( $args['type'] ) ) {
+
+			// check for default:0 or default:1 to set the checked attribute
+		 	if( in_array( 'default:1', $args['options'] ) ) {
+		 		$checked = 'checked';
+		 	} else if( in_array( 'default:0', $args['options'] ) ) {
+		 		$checked = '';
+		 	}
+
+		}
+
 		$content = "\n<!-- Checkbox by MailChimp for WordPress plugin v". MC4WP_LITE_VERSION ." - http://dannyvankooten.com/mailchimp-for-wordpress/ -->\n";
+		
+		do_action('mc4wp_before_checkbox');
+
 		$content .= '<p id="mc4wp-checkbox">';
 		$content .= '<label><input type="checkbox" name="mc4wp-do-subscribe" value="1" '. $checked . ' /> ' . __($label) . '</label>';
 		$content .= '</p>';
+		
+		do_action('mc4wp_after_checkbox');
+
 		$content .= "\n<!-- / MailChimp for WP Plugin -->\n";
 		return $content;
 	}
@@ -215,9 +242,18 @@ class MC4WP_Lite_Checkbox
 	/* End Multisite functions */
 
 	/* Start Contact Form 7 functions */
-	public function subscribe_from_cf7($arg = null)
+
+	public function alter_cf7_data($data) {
+		$data['mc4wp_checkbox'] = ( isset( $_POST['mc4wp-do-subscribe'] ) && $_POST['mc4wp-do-subscribe'] == 1 ) ? __("Yes") : __("No");
+		return $data;
+	}
+
+	public function subscribe_from_cf7($args = null)
 	{
-		if(!isset($_POST['mc4wp-do-subscribe']) || !$_POST['mc4wp-do-subscribe']) { return false; }
+		// check if CF7 "mc4wp" checkbox was checked
+		if(!isset($_POST['mc4wp-do-subscribe']) || !$_POST['mc4wp-do-subscribe']) { 
+			return false; 
+		}
 		
 		$_POST['mc4wp-try-subscribe'] = 1;
 		unset($_POST['mc4wp-do-subscribe']);

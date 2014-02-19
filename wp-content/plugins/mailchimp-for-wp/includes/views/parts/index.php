@@ -1,6 +1,6 @@
 <?php
-// prevent directory listing
-
-header('HTTP/1.0 403 Forbidden');
-header("X-Robots-Tag: noindex");
-exit;
+if( ! defined("MC4WP_LITE_VERSION") ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}

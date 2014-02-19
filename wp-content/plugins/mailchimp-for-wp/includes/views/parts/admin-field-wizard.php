@@ -1,4 +1,10 @@
-<?php defined("ABSPATH") or exit; ?>
+<?php 
+if( ! defined("MC4WP_LITE_VERSION") ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+?>
 <div id="mc4wp-fw" class="mc4wp-well">
 
 	<h4 class="mc4wp-title">Add a new field</h4>
@@ -13,7 +19,8 @@
 			<optgroup label="MailChimp merge fields" class="merge-fields"></optgroup>
 			<optgroup label="Interest groupings" class="groupings"></optgroup>
 			<optgroup label="Other" class="other">
-				<option class="default" value="submit">Submit button</option>				
+				<option class="default" value="submit">Submit button</option>
+				<option class="default" disabled>(PRO ONLY) Lists Choice</option>				
 			</optgroup>
 		</select>
 	</p>

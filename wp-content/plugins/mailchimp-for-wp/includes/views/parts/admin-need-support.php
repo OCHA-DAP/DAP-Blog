@@ -1,4 +1,10 @@
-<?php defined("ABSPATH") or exit; ?>
+<?php 
+if( ! defined("MC4WP_LITE_VERSION") ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+?>
 <div class="mc4wp-box">
 	<h4 class="mc4wp-title">Looking for support?</h4>
 	<p>Use the <a href="http://wordpress.org/support/plugin/mailchimp-for-wp">support forums</a> on WordPress.org.</p>

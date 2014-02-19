@@ -1,5 +1,11 @@
 <?php
 
+if( ! defined("MC4WP_LITE_VERSION") ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+
 /**
 * Echoes a sign-up checkbox.
 */
@@ -107,7 +113,7 @@ function mc4wp_get_subscriber_count( $list_ids ) {
 function mc4wp_get_current_url() {
 	$page_url = 'http';
 
-	if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') { $page_url .= 's'; }
+	if( is_ssl() ) { $page_url .= 's'; }
 
 	$page_url .= '://';
 

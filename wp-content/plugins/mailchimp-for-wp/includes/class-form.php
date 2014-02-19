@@ -1,5 +1,11 @@
 <?php
 
+if( ! defined("MC4WP_LITE_VERSION") ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+
 class MC4WP_Lite_Form {
 	private static $instance = null;
 	private $form_instance_number = 1;
@@ -49,10 +55,10 @@ class MC4WP_Lite_Form {
 	public function initialize()
 	{
 		// register placeholder script, which will later be enqueued for IE only
-		wp_register_script( 'mc4wp-placeholders', plugins_url('mailchimp-for-wp/assets/js/placeholders.min.js'), array(), MC4WP_LITE_VERSION, true );
+		wp_register_script( 'mc4wp-placeholders', MC4WP_LITE_PLUGIN_URL . 'assets/js/placeholders.min.js', array(), MC4WP_LITE_VERSION, true );
 	
 		// register non-AJAX script (that handles form submissions)
-		wp_register_script( 'mc4wp-forms', plugins_url('mailchimp-for-wp/assets/js/forms.js'), array(), MC4WP_LITE_VERSION, true );
+		wp_register_script( 'mc4wp-forms', MC4WP_LITE_PLUGIN_URL . 'assets/js/forms.js', array(), MC4WP_LITE_VERSION, true );
 	}
 
 	public function add_stylesheets($stylesheets) {
@@ -76,12 +82,19 @@ class MC4WP_Lite_Form {
 		}
 
 		// add some useful css classes
-		$css_classes = ' ';
+		$css_classes = 'form mc4wp-form ';
 		if ( $this->error ) $css_classes .= 'mc4wp-form-error ';
 		if ( $this->success ) $css_classes .= 'mc4wp-form-success ';
 
+		// allow developers to add css classes
+		$css_classes = apply_filters( 'mc4wp_form_css_classes', $css_classes );
+
+
+
+		$form_action = apply_filters( 'mc4wp_form_action', mc4wp_get_current_url() );
+
 		$content = "\n<!-- Form by MailChimp for WordPress plugin v". MC4WP_LITE_VERSION ." - http://dannyvankooten.com/mailchimp-for-wordpress/ -->\n";
-		$content .= '<form method="post" action="'. mc4wp_get_current_url() .'" id="mc4wp-form-'.$this->form_instance_number.'" class="mc4wp-form form'.$css_classes.'">';
+		$content .= '<form method="post" action="'. $form_action .'" id="mc4wp-form-'.$this->form_instance_number.'" class="'.$css_classes.'">';
 
 		// maybe hide the form
 		if ( !( $this->success && $opts['hide_after_success'] ) ) {
@@ -91,13 +104,11 @@ class MC4WP_Lite_Form {
 			$form_markup = str_replace( array( '%N%', '{n}' ), $this->form_instance_number, $form_markup );
 			$form_markup = mc4wp_replace_variables( $form_markup, array_values( $opts['lists'] ) );
 
-			// allow plugins to alter form content
-			$form_markup = apply_filters('mc4wp_form_content', $form_markup);
-
 			// allow plugins to add form fields
 			do_action('mc4wp_before_form_fields', 0);
 
-			$content .= $form_markup;
+			// allow plugins to alter form content
+			$content .= apply_filters('mc4wp_form_content', $form_markup);
 
 			// allow plugins to add form fields
 			do_action('mc4wp_after_form_fields', 0);
@@ -119,8 +130,12 @@ class MC4WP_Lite_Form {
 				$e = $this->error;
 
 				$error_type = ($e == 'already_subscribed') ? 'notice' : 'error';
-				$error_message = __($opts['text_' . $e], 'mailchimp-for-wp');
-				$content .= '<div class="mc4wp-alert mc4wp-'. $error_type .'">'. $error_message . '</div>';
+				$error_message = isset($opts['text_' . $e]) ? $opts['text_' . $e] : $opts['text_error'];
+				
+				// allow developers to customize error message
+				$error_message = apply_filters('mc4wp_form_error_message', $error_message);
+				
+				$content .= '<div class="mc4wp-alert mc4wp-'. $error_type .'">'. __($error_message, 'mailchimp-for-wp') . '</div>';
 
 				// show the eror returned by MailChimp?
 				if ( $api->has_error() && current_user_can( 'manage_options' ) ) {
@@ -169,6 +184,13 @@ class MC4WP_Lite_Form {
 		// ensure honeypot was not filed
 		if ( isset( $_POST['_mc4wp_required_but_not_really'] ) && !empty( $_POST['_mc4wp_required_but_not_really'] ) ) {
 			$this->error = 'spam';
+			return false;
+		}
+
+		// allow plugins to add additional validation
+		$valid_form_request = apply_filters('mc4wp_valid_form_request', true);
+		if($valid_form_request !== true) {
+			$this->error = $valid_form_request;
 			return false;
 		}
 
