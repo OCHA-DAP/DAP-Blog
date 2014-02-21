@@ -7,8 +7,9 @@ The blog is based on WordPress (http://wordpress.org/). It was developed on top 
 Issues
 ------
 
-If you find any issues with the blog related to something technical (not related to content), please use GitHub's issue tracker to report that issue. I will be using that feature to prioritize and solve issues with the blog.
+If you find **absolutely any issues** in the blog, either on content or technical subjects, please log them in the issues tab, or by clicking here. If you **do not have** a GitHub account, send an email to `capelo@un.org`.
 
+For something major (or *urgent*), please send me an email at capelo@un.org
 
 Testing
 -------
@@ -16,27 +17,25 @@ Testing
 Please follow the step-by-step bellow for testing: 
 
         
-**[1]** Connect to the VPN provided.
+**[1]** Go to the URL http://docs.hdx.atman.ro/
         
-**[2]** Open the URL http://blog.ochadata.net
+**[2]** Test links in every page. 
+
+**[3]** Read every page and look for typos and alike.
         
-**[3]** Test all the links in the front page.
+**[4]** Add your email to the newsletter (MailChimp) on the page footer.
         
-**[4]** Check if the RSS feed is working in the footer. 
+**[5]** Reduce and increase the page width to test responsiveness and test the navigation links in the mobile version.
         
-**[5]** Add your email to the newsletter in the page footer.
+**[6]** Perform step [5] in as many pages as you can. 
         
-**[6]** Reduce and increase the page width to test responsiveness and test the navigation links in the mobile version.
+**[7]** Open the URL http://docs.hdx.atman.ro/co-creating-a-humanitarian-data-platform/ and give special attention to the image: does it load right, etc?
         
-**[7]** Perform step [5] in as many pages as you can. 
-        
-**[8]** Open the URL http://blog.ochadata.net/how-much-data-we-have-in-hdx/ and check if the images are loading correctly.
-        
-**[9]** On the URL above, please add comments to the blog. 
+**[8]** On the URL above, please add comments to the blog. 
+
+**[9]** You're great. Thanks. http://xkcd.com/391/
 
 
-
-If you find *any* issues, please use the issue tracker on this GitHub repo. For something major, please send me an email at capelo@un.org
 
 
 Usage Notes
