@@ -14,7 +14,7 @@ For something major (or *urgent*), please send me an email at capelo@un.org
 Testing
 -------
 
-Please follow the step-by-step bellow for testing: 
+Please follow the step-by-step bellow for testing -- and test it in as *many* browsers as you can: 
 
         
 **[1]** Go to the URL http://docs.hdx.atman.ro/
