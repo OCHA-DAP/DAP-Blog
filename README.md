@@ -4,6 +4,14 @@ DAP Blog
 The blog is based on WordPress (http://wordpress.org/). It was developed on top of the `Acute` theme by ThemeBeans (http://themebeans.com/). 
 
 
+New Style Iterations
+--------------------
+
+- Iteration 1: https://github.com/OCHA-DAP/DAP-Blog/blob/master/iteration_1.png
+- Iteration 2: https://github.com/OCHA-DAP/DAP-Blog/blob/master/iteration_2.png
+
+
+
 Issues
 ------
 
