@@ -352,7 +352,7 @@ a [class*=" icon-"]:before {
 
 .shortcode-list ul li {
 	list-style: disc; 
-	color: #96999D;
+	/* color: #96999D; edited by Serban 20.02.2014*/
 	margin-left: 20px;
 	padding-left: 5px;
 	}
@@ -736,7 +736,7 @@ pre .dec { color: #98fb98 } 	/* DECIMAL */
 	}
 	
 .featurearea p { 
-	color: #A7AAB1;
+	/* color: #A7AAB1; commented by Serban 21.02.2014 */
 	text-align: left;
 	font-size: 15px;
 	line-height: 26px;

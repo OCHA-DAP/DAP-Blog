@@ -1,23 +1,27 @@
-=== Plugin Name ===
+=== Google Forms ===
 Contributors: mpwalsh8
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DK4MS3AA983CC
 Tags: Google Forms, Google Docs, Google, Spreadsheet, shortcode, forms
-Requires at least: 3.3
-Tested up to: 3.7.1
-Stable tag: 0.63
-License: GPL
+Requires at least: 3.7.1
+Tested up to: 3.9
+Stable tag: 0.71
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 
 Embeds a published, public Google Form in a WordPress post, page, or widget.
 
 == Description ==
 
-Fetches a published Google Form using a WordPress custom post or shortcode, removes the Gooogle wrapper HTML and then renders it as an HTML form embedded in your blog post or page. When using Google Form post type, the *wpgform* shortcode accepts one parameter, *id*, which is the post id of the form.  When using the deprecated *gform* shortcode, the only required parameter is `form` which is set to the URL to the Google Form URL.  Recommended but optional, you can also provide a custom URL for a confirmation page if you don't care for the default Google text.  The confirmation page will override the default Google `Thank You` page and offers better integration with your WordPress site.  There are a number of other options, refer to the documentation for further details.
+Fetches a published Google Form using a WordPress custom post or shortcode, removes the Gooogle wrapper HTML and then renders it as an HTML form embedded in your blog post or page. When using Google Form post type, the *wpgform* shortcode accepts one parameter, *id*, which is the post id of the form.  When using the __deprecated__ *gform* shortcode, the only required parameter is `form` which is set to the URL to the Google Form URL.  Recommended but optional, you can also provide a custom URL for a confirmation page if you don't care for the default Google text.  The confirmation page will override the default Google `Thank You` page and offers better integration with your WordPress site.  There are a number of other options, refer to the documentation for further details.
 
 For example, suppose you want to integrate the form at `https://docs.google.com/spreadsheet/viewform?hl=en_US&pli=1&formkey=ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678#gid=0`, (not a real URL) use the following shortcode in your WordPress post or page:
 
     [wpgform id='861']
 
     [gform form='https://docs.google.com/spreadsheet/viewform?hl=en_US&pli=1&formkey=ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678#gid=0']
+
+__Deprecated:__ use of the *gform* shortcode is __deprecated__ - please use the *wpgform* shortcode.
 
 Currently, this plugin only supports Google Forms that are "Published as a web page" and therefore public. Private Google Forms are not supported.
 
@@ -33,7 +37,7 @@ Currently, this plugin only supports Google Forms that are "Published as a web p
 
 == Usage ==
 
-As features have been added, usage of the `gform` shortcode has grown increasing complex.  Begining with v0.46, a second shortcode, `wpgform` has been introduced in conjunction with a Custom Post Type to define forms deprecating usage of the `gformn` shortcode. Usage of the new shortcode and Custom Post Type is much, much easier than the complexities of the original `gform` shortcode.  Users are strong encouraged to migrate usage to the new shortcode and Custom Post Type.  New features will only be added to the Custom Post Type usage model.
+As features have been added, usage of the `gform` shortcode has grown increasing complex (the `gform` shortcode is now *deprecated*).  Begining with v0.46, a second shortcode, `wpgform` has been introduced in conjunction with a Custom Post Type to define forms deprecating usage of the `gform` shortcode. Usage of the new shortcode and Custom Post Type is much, much easier than the complexities of the original `gform` shortcode.  Users are strong encouraged to migrate usage to the new shortcode and Custom Post Type.  New features will only be added to the Custom Post Type usage model.
 
 The WordPress Google Form shortcode `wpgform` supports a single attribute.  The rest of the controls are derived from the information stored with the Custom Post Type.
 
@@ -44,7 +48,7 @@ The WordPress Google Form shortcode `wpgform` supports a single attribute.  The 
 * __id__:  The numeric id of the Google Form Custom Post Type.
 * __uid__:  A unique string (e.g. 'A-') used to ensure form element ID attributes are unique when a form appears on a page multiple times. (optional)
 
-The WordPress Google Form shortcode `gform` supports a number of attributes that allow further control and customization of the Google Form.
+The Google Form *deprecated* shortcode `gform` supports a number of attributes that allow further control and customization of the Google Form.
 
 `[gform form='<full_url_to_Google_Form>' confirm='<full_url_to_confirmation_page>' class='<value>' legal='on|off' br='on|off' prefix='<value>' suffix='<value>' email='on|off' sendto='<email address>' style='redirect|ajax' spreadsheet='<full_url_to_Google_Spreadsheet>' unitethemehack='on|off']`
 
@@ -56,7 +60,7 @@ The WordPress Google Form shortcode `gform` supports a number of attributes that
 * __alert__:  A message to display upon successful form submission in a Javascript Alert box (e.g. _Thanks for your submission!_).
 * __class__:  Google Forms are full of classes but the WordPress Google Form plugin does not bring their definitions into page when importing the form.  The _class_ attribute allows the addition of one or more CSS classes to the DIV which wraps the Google Form.  To add multiple classes, simply separate the class names with spaces.
 * __legal__:  By default Google Forms have a _Powered by Google Docs_ section at the bottom of the form which includes links to Google TOS and other Google information.  If you do not want to see this information as part of the form, add `legal='off'` to your shortcode usage.  The content remains in the form, it is simply hidden from the end user using CSS.
-* __br__:  For a <br> tag to be inserted between the form label and the input text box by setting the *br* attribute to *on*.  This will result in the form label and the input box being stacked on top of one another.
+* __br__:  For a &lt;br&gt; tag to be inserted between the form label and the input text box by setting the *br* attribute to *on*.  This will result in the form label and the input box being stacked on top of one another.
 * __prefix__:  Google Forms make use 20+ CSS classes.  If you use multiple forms and want to style them each differently, you can add a _prefix_ which will be added to beginning of each class name used in the Google Form.
 * __suffix__:  Append a character string to the end of each form label.  This can also be accomplished using CSS, refer to the CSS section.
 * __title__:  By default Google Forms have title wrapped in a &lt;h1&gt; tag.  If you do not want to include this form title as part of the form, add `title='off'` to your shortcode usage.  The &lt;h1&gt; content is removed from the form.
@@ -76,6 +80,18 @@ The WordPress Google Form shortcode `gform` supports a number of attributes that
 This plugin is available under the GPL license, which means that it's free. If you use it for a commercial web site, if you appreciate my efforts or if you want to encourage me to develop and maintain it, please consider making a donation using Paypal, a secured payment solution. You just need to click the donate button on the the [plugin overview page](http://michaelwalsh.org/wordpress/wordpress-plugins/wpgform/) and follow the instructions.
 
 == Frequently Asked Questions ==
+
+= Why I do I have a "cURL transport missing" message on my Dashboard? =
+
+There was a change to the WordPress HTTP API in version 3.7 which resulted in wp_remote_post() no longer working with the streams and fsockopen transports when posting form data back to Google Docs.  The cURL transport does work reliably so a check has been added and a notification is issued when the cURL transport is missing.  This notification can be hidden by selecting the proper checkbox on the plugin settings page.
+
+= Will the plugin work without the cURL transport? =
+
+Up until WordPress 3.6.1, the plugin worked with any of the supported transports (streams, fsockopen, curl).  Currently only cURL is known to work properly.  You may have some success with other transports IF your form does not include checkboxes.  Checkboxes definitely do not work with anything but the cURL transport.
+
+= How can I add the cURL transport to WordPress? =
+
+The cURL transport is enabled by WordPress when PHP support for cURL is detected.  It isn't something which can be added to WordPress, it needs to be present in the PHP version your web server is running.  Contact your hosting provider to inquire about adding cURL support to PHP for your WordPress site.
 
 = The default style is ugly. Can I change it? =
 Yes, there are two ways to change the style (aka apearance) of the form.
@@ -363,7 +379,51 @@ div.ss-form-container div.required-message {
 
 No known upgrade issues.
 
-== Changelog ==
+== Change log ==
+
+= Version 0.71 =
+* Bumped version number due to mistagging v0.70 release.
+
+= Version 0.70 =
+* Added Serbo Croation translation (thank you Borisa Djuraskovic / www.webhostinghub.com)
+* Added support for Regular Expression validation check.  Regular expressions can be tricky, YMMV!
+* Fixed a bug which occurs when the Send Email option is enabled but the Send To address isn't specified (should default to admin email).
+
+= Version 0.69 =
+* Fixed bug in generated jQuery for Validation which caused syntax errors which could then interfere with redirect.
+* Added support for embedded images in Google Forms.
+
+= Version 0.68 =
+* Fixed a bug due to missing named parameter passed to wp_update_post() which  manifested itself in a call to array_map() as part of core WordPress function.
+
+= Version 0.67 =
+* Fixed typo in internationalization mapping for one of the form buttons.
+* Removed leftover debug code.
+
+= Version 0.66 =
+* Moved hygiene out of init hook into admin_init hook so it won't run on every page load.  Resolves conflict with WordPress SEO.
+* Fixed hygiene to only update post content when it isn't what is expected.
+* Fixed bug which caused all form submissions to be logged regardless of plugin setting.
+
+= Version 0.65 =
+* Implemented "save_post" for custom post type eliminating general purpose "save_post" (only option prior to WordPress 3.7) action which could potentially, if not handled correctly by another plugin, corrupt post data.
+* Formally __deprecated__ the `gform` shortcode by updating README file.
+* Added flush of rewrite rules upon plugin activation and deactivation.
+* Implemented protocol relative URLs for loading jQuery script from Microsoft CDN to avoid mixed-content warnings when serving over https.
+* Fixed layout of CAPTCHA options on settings page.
+* Fixed bug with preset values as part of the URL which contain spaces.
+* Fixed bug sending End User email upon form submission.
+* Refactored construction of email headers based on experience with Email Users plugin.
+
+= Version 0.64 =
+* Fixed a number of strings which were missing translation wrapper functions.
+* Reverted to manually constructed body parameter for wp_remote_post() to allow checkboxes to be properly passed to Google.
+* Fixed warnings generated by calls to static functions which were not declared static.
+* Added check for HTTP API cURL transport and issue a warning when not present.  There was a change between WordPress 3.6.1 and 3.7 to the WordPress HTTP API and the streams and fsockopen transports are unable to post form values back to Google using wp_remote_post().
+* Added a setting to allow hiding the cURL transport missing message on the Dashboard.
+* Added a check to ensure jQuery script isn't output more than once.
+* Remove hook into "the_content" to reduce potential conflicts with other plugins (e.g. Wordpress SEO plugin by Yoast).
+* Added placeholders for some of the form fields when defining a Form within the UI.
 
 = Version 0.63 =
 * Refactored code to which assembles arguments for wp_remote_post() to construct the body argument as an array as opposed to a URL formatted string of concatenated parameters.  The long string was causing problems with newer versions of PHP.  The array of arguments is much cleaner (thanks to David Högborg for providing the basics of a patch).

@@ -206,7 +206,7 @@ function wpgform_options_page()
 function wpgform_settings_input()
 {
     $wpgform_options = wpgform_get_plugin_options() ;
-    error_log(print_r($wpgform_options, true)) ;
+    //error_log(print_r($wpgform_options, true)) ;
 ?>
     <table class="form-table">
         <tr valign="top">
@@ -251,13 +251,13 @@ function wpgform_settings_input()
             <br style="margin-bottom: 10px;"/>
             <label for="wpgform_captcha_operator_plus">
             <input name="wpgform_options[captcha_operator_plus]" type="checkbox" id="wpgform_captcha_operator_plus" value="1" <?php checked('1', $wpgform_options['captcha_operator_plus']) ; ?> />
-            <?php _e('Addition:  +', WPGFORM_I18N_DOMAIN);?><br /></label>
+            <?php _e('Addition:  +', WPGFORM_I18N_DOMAIN);?></label><br />
             <label for="wpgform_captcha_operator_minus">
             <input name="wpgform_options[captcha_operator_minus]" type="checkbox" id="wpgform_captcha_operator_minus" value="1" <?php checked('1', $wpgform_options['captcha_operator_minus']) ; ?> />
-            <?php _e('Subtraction:  -', WPGFORM_I18N_DOMAIN);?><br /></label>
+            <?php _e('Subtraction:  -', WPGFORM_I18N_DOMAIN);?></label><br />
             <label for="wpgform_captcha_operator_mult">
             <input name="wpgform_options[captcha_operator_mult]" type="checkbox" id="wpgform_captcha_operator_mult" value="1" <?php checked('1', $wpgform_options['captcha_operator_mult']) ; ?> />
-            <?php _e('Multiplication:  *', WPGFORM_I18N_DOMAIN);?><br /></label>
+            <?php _e('Multiplication:  *', WPGFORM_I18N_DOMAIN);?></label><br />
             <small><?php _e('Choose which operators can be used for CAPTCHA validation (when enabled)', WPGFORM_I18N_DOMAIN);?></small>
 
             <br style="margin-bottom: 10px;"/>
@@ -270,7 +270,7 @@ function wpgform_settings_input()
             </fieldset></td>
         </tr>
         <tr valign="top">
-            <th scope="row"><label><?php _e('Confirmation Email Format', WPGFORM_I18N_DOMAIN);?></label></th>
+            <th scope="row"><label><?php _e('Confirmation<br />Email Format', WPGFORM_I18N_DOMAIN);?></label></th>
             <td><fieldset>
             <label for="wpgform_email_format">
             <input name="wpgform_options[email_format]" type="radio" id="wpgform_email_format" value="<?php echo WPGFORM_EMAIL_FORMAT_HTML ;?>" <?php checked(WPGFORM_EMAIL_FORMAT_HTML, $wpgform_options['email_format']) ; ?> />
@@ -282,6 +282,23 @@ function wpgform_settings_input()
             <label for="bcc_blog_admin">
             <input name="wpgform_options[bcc_blog_admin]" type="checkbox" id="wpgform_bcc_blog_admin" value="1" <?php checked('1', $wpgform_options['bcc_blog_admin']) ; ?> />
             <?php _e('Bcc Blog Admin on Confirmation Email (when used)', WPGFORM_I18N_DOMAIN);?></label>
+            </fieldset></td>
+        </tr>
+        <tr valign="top">
+            <th scope="row"><label><?php _e('cURL Transport<br />Notification', WPGFORM_I18N_DOMAIN);?></label></th>
+            <td><fieldset>
+            <label for="wpgform_curl_transport_missing_message">
+            <table style="padding: 0px;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+            <td style="padding: 5px 0px; vertical-align: top;">
+            <input name="wpgform_options[curl_transport_missing_message]" type="checkbox" id="wpgform_curl_transport_missing_message" value="1" <?php checked('1', $wpgform_options['curl_transport_missing_message']) ; ?> />
+            </td>
+            <td style="padding: 5px;">
+            <?php _e('Hide the cURL Transport Missing notification message.<br /><small>The cURL transport is critical for proper operation of the Google Forms plugin.</small>', WPGFORM_I18N_DOMAIN);?>
+            </td>
+            </tr>
+            </table>
+            </label>
             </fieldset></td>
         </tr>
         <tr valign="top">

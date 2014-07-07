@@ -2,8 +2,8 @@
 /*
 Plugin Name: Font Awesome 4 Menus
 Plugin URI: http://www.newnine.com/plugins/font-awesome-4-menus
-Description: Join the retina/responsive revolution by easily adding Font Awesome 4.0.3 icons to your WordPress menus and anywhere else on your site! No programming necessary.
-Version: 4.0.3.0
+Description: Join the retina/responsive revolution by easily adding Font Awesome 4.1 icons to your WordPress menus and anywhere else on your site! No programming necessary.
+Version: 4.1.0.0
 Author: New Nine Media
 Author URI: http://www.newnine.com
 License: GPLv2 or later
@@ -30,7 +30,7 @@ class FontAwesomeFour {
 
     function admin_notice(){
         global $current_user, $pagenow;
-        if( 'kill-n9m-font-awesome-4-notice' == $_REQUEST[ 'action' ] ){
+        if( isset( $_REQUEST[ 'action' ] ) && 'kill-n9m-font-awesome-4-notice' == $_REQUEST[ 'action' ] ){
             update_user_meta( $current_user->data->ID, 'n9m-font-awesome-4-notice-hide', 1 );
         }
         $shownotice = get_user_meta( $current_user->data->ID, 'n9m-font-awesome-4-notice-hide', true );

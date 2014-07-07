@@ -43,22 +43,49 @@ function wpgform_register_post_types()
             'excerpt'
         ),
         'labels' => array(
-            'name' => 'Google Forms',
-            'singular_name' => 'Google Form',
-            'add_new' => 'Add New Google Form',
-            'add_new_item' => 'Add New Google Form',
-            'edit_item' => 'Edit Google Form',
-            'new_item' => 'New Google Form',
-            'view_item' => 'View Google Form',
-            'search_items' => 'Search Google Forms',
-            'not_found' => 'No Google Forms Found',
-            'not_found_in_trash' => 'No Google Forms Found In Trash'
+            'name' => __('Google Forms', WPGFORM_I18N_DOMAIN),
+            'singular_name' => __('Google Form', WPGFORM_I18N_DOMAIN),
+            'add_new' => __('Add New Google Form', WPGFORM_I18N_DOMAIN),
+            'add_new_item' => __('Add New Google Form', WPGFORM_I18N_DOMAIN),
+            'edit_item' => __('Edit Google Form', WPGFORM_I18N_DOMAIN),
+            'new_item' => __('New Google Form', WPGFORM_I18N_DOMAIN),
+            'view_item' => __('View Google Form', WPGFORM_I18N_DOMAIN),
+            'search_items' => __('Search Google Forms', WPGFORM_I18N_DOMAIN),
+            'not_found' => __('No Google Forms Found', WPGFORM_I18N_DOMAIN),
+            'not_found_in_trash' => __('No Google Forms Found In Trash', WPGFORM_I18N_DOMAIN),
         ),
         'menu_icon' => plugins_url('/images/forms-16.png', __FILE__)
     );
 
-    // Register the WordPress Google Form post type
+    //  Register the WordPress Google Form post type
     register_post_type(WPGFORM_CPT_FORM, $wpgform_args) ;
+}
+
+/** Perform routine maintenance */
+function wpgform_routine_maintenance()
+{
+    //error_log(sprintf('%s::%s (init)', basename(__FILE__), __LINE__)) ;
+    //  Post type is registered, do some hygiene on any that exist in the database.
+    //  Insert the "wpgform" shortcode for that post into the post content. This
+    //  ensures the form will be displayed properly when viewed through the CPT URL.
+
+    $args = array('post_type' => WPGFORM_CPT_FORM, 'posts_per_page' => -1) ;
+
+    // unhook this function so it doesn't update the meta data incorrectly
+    remove_action('save_post_' . WPGFORM_CPT_FORM, 'wpgform_save_meta_box_data');
+	
+    $loop = new WP_Query($args);
+
+    while ($loop->have_posts()) :
+        $loop->the_post() ;
+        $content = sprintf('[wpgform id=\'%d\']', get_the_ID()) ;
+
+        if ($content !== get_the_content())
+            wp_update_post(array('ID' => get_the_ID(), 'post_content' => $content)) ;
+    endwhile ;
+
+    // re-hook this function
+    add_action('save_post_' . WPGFORM_CPT_FORM, 'wpgform_save_meta_box_data');
 }
 
 //  Build custom meta box support
@@ -79,7 +106,7 @@ function wpgform_primary_meta_box_content($fieldsonly = false)
 {
     $content = array(
         'id' => 'wpgform-primary-meta-box',
-        'title' => 'Google Form Details',
+        'title' => __('Google Form Details', WPGFORM_I18N_DOMAIN),
         'page' => WPGFORM_CPT_FORM,
         'context' => 'normal',
         'priority' => 'high',
@@ -90,6 +117,7 @@ function wpgform_primary_meta_box_content($fieldsonly = false)
                 'id' => WPGFORM_PREFIX . 'form',
                 'type' => 'lgtext',
                 'std' => '',
+                'placeholder' => __('Google Form URL', WPGFORM_I18N_DOMAIN),
                 'required' => true
             ),
             array(
@@ -98,6 +126,7 @@ function wpgform_primary_meta_box_content($fieldsonly = false)
                 'id' => WPGFORM_PREFIX . 'confirm',
                 'type' => 'lgtext',
                 'std' => '',
+                'placeholder' => __('Confirmation Page URL', WPGFORM_I18N_DOMAIN),
                 'required' => false
             ),
             array(
@@ -115,6 +144,7 @@ function wpgform_primary_meta_box_content($fieldsonly = false)
                 'id' => WPGFORM_PREFIX . 'alert',
                 'type' => 'lgtext',
                 'std' => '',
+                'placeholder' => __('Alert Message', WPGFORM_I18N_DOMAIN),
                 'required' => false
             ),
             array(
@@ -149,6 +179,7 @@ function wpgform_primary_meta_box_content($fieldsonly = false)
                 'id' => WPGFORM_PREFIX . 'form_css',
                 'type' => 'textarea',
                 'std' => '',
+                'placeholder' => 'Define form specific CSS rules',
                 'required' => false
             ),
             array(
@@ -194,7 +225,7 @@ function wpgform_secondary_meta_box_content($fieldsonly = false)
 {
     $content = array(
         'id' => 'wpgform-secondary-meta-box',
-        'title' => 'Google Form Options',
+        'title' => __('Google Form Options', WPGFORM_I18N_DOMAIN),
         'page' => WPGFORM_CPT_FORM,
         'context' => 'side',
         'priority' => 'high',
@@ -319,7 +350,7 @@ function wpgform_validation_meta_box_content($fieldsonly = false)
 {
     $content = array(
         'id' => 'wpgform-validation-meta-box',
-        'title' => 'Google Form Field Validation',
+        'title' => __('Google Form Field Validation', WPGFORM_I18N_DOMAIN),
         'page' => WPGFORM_CPT_FORM,
         'context' => 'normal',
         'priority' => 'high',
@@ -361,6 +392,7 @@ function wpgform_validation_meta_box_content($fieldsonly = false)
                     'range',
                     'max',
                     'min',
+                    'regex',
                 ),
             ),
             array(
@@ -395,7 +427,7 @@ function wpgform_placeholder_meta_box_content($fieldsonly = false)
 {
     $content = array(
         'id' => 'wpgform-placeholder-meta-box',
-        'title' => 'Google Form Field Placeholder',
+        'title' => __('Google Form Field Placeholder', WPGFORM_I18N_DOMAIN),
         'page' => WPGFORM_CPT_FORM,
         'context' => 'normal',
         'priority' => 'high',
@@ -433,7 +465,7 @@ function wpgform_hiddenfields_meta_box_content($fieldsonly = false)
 {
     $content = array(
         'id' => 'wpgform-hiddenfield-meta-box',
-        'title' => 'Google Form Hidden Fields',
+        'title' => __('Google Form Hidden Fields', WPGFORM_I18N_DOMAIN),
         'page' => WPGFORM_CPT_FORM,
         'context' => 'normal',
         'priority' => 'high',
@@ -589,19 +621,29 @@ function wpgform_build_meta_box($mb)
             switch ($field['type']) {
                 case 'text':
                 case 'lgtext':
-                    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '<br />', '<small>', $field['desc'], '</small>';
+                    printf('<input type="text" name="%s" id="%s" style="width: 97%%;" value="%s" placeholder="%s" /><br /><small>%s</small>',
+                        $field['id'], $field['id'], $meta ? $meta : $field['std'],
+                        array_key_exists('placeholder', $field) ? $field['placeholder'] : '', $field['desc']) ;
                     break;
 
                 case 'medtext':
-                    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:47%" />', '<br />', '<small>', $field['desc'], '</small>';
+                    printf('<input type="text" name="%s" id="%s" size="30" style="width: 47%%;" value="%s" placeholder="%s" /><br /><small>%s</small>',
+                        $field['id'], $field['id'], $meta ? $meta : $field['std'],
+                        array_key_exists('placeholder', $field) ? $field['placeholder'] : '', $field['desc']) ;
                     break;
 
                 case 'smtext':
-                    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:27%" />', '<br />', '<small>', $field['desc'], '</small>';
+                    printf('<input type="text" name="%s" id="%s" size="30" style="width: 27%%;" value="%s" placeholder="%s" /><br /><small>%s</small>',
+                        $field['id'], $field['id'], $meta ? $meta : $field['std'],
+                        array_key_exists('placeholder', $field) ? $field['placeholder'] : '', $field['desc']) ;
                     break;
 
                 case 'textarea':
-                    echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '<br />', '<small>', $field['desc'], '</small>';
+                    printf('<textarea name="%s" id="%s" cols="%s" rows="%s" style="width: 97%%;" placeholder="%s">%s</textarea><br /><small>%s</small>',
+                        $field['id'], $field['id'], array_key_exists('cols', $field) ? $field['cols'] : 60,
+                        array_key_exists('rows', $field) ? $field['rows'] : 4,
+                        array_key_exists('placeholder', $field) ? $field['placeholder'] : '', 
+                        $meta ? $meta : $field['std'], $field['desc']) ;
                     break;
 
                 case 'select':
@@ -716,10 +758,9 @@ function wpgform_add_quick_edit_nonce($column_name, $post_type)
     }
 }
 
-add_action('save_post', 'wpgform_save_meta_box_data');
+add_action('save_post_' . WPGFORM_CPT_FORM, 'wpgform_save_meta_box_data');
 /**
- * Action to save WordPress Google Form meta box data for both
- * team and player Custom Post Types.
+ * Action to save WordPress Google Form meta box data for CPT.
  *
  */
 function wpgform_save_meta_box_data($post_id)
@@ -815,6 +856,21 @@ function wpgform_save_meta_box_data($post_id)
                 }
             }
         }
+
+        //  Set the post content to the shortcode for the form for rendering the CPT URL slug
+
+        if (!wp_is_post_revision($post_id))
+        {
+		    // unhook this function so it doesn't loop infinitely
+		    remove_action('save_post_' . WPGFORM_CPT_FORM, 'wpgform_save_meta_box_data');
+	
+		    // update the post, which calls save_post again
+            wp_update_post(array('ID' => $post_id,
+                'post_content' => sprintf('[wpgform id=\'%d\']', $post_id))) ;
+
+		    // re-hook this function
+		    add_action('save_post_' . WPGFORM_CPT_FORM, 'wpgform_save_meta_box_data');
+	    }
     }
     else
     {

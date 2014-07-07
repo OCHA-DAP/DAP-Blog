@@ -3,7 +3,7 @@ Contributors: New Nine
 Author URI: http://www.newnine.com
 Tags: menus, font awesome, navigation, responsive, nav menu, wp_nav_menu
 Requires at least: 3
-Tested up to: 3.8
+Tested up to: 3.9.1
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
