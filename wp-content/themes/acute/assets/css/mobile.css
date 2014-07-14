@@ -12,7 +12,7 @@ and (max-width: 767px) {
 
 	.fix {}
 
-	.entry-header {
+	.BlogFrontPage .entry-header {
 		width: 100%;
 	}
 

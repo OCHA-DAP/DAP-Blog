@@ -56,12 +56,40 @@ Under Appearance -> Menus, click 'Screen Options' (top right of screen) and make
 
 Yes. Font Awesome menus adds a space between the icon and the text, and wraps that portion in a span with a class of "fontawesome-text". To hide the text and just show the icon, you can put `.fontawesome-text {display: none;}` in your stylesheet.
 
-You can see this in action at our responsive site (http://www.newnine.com) where the mobile and smaller tablet versions only show the icons, but the text then appears on larger displays.
+We have also added an administrative option under Settings->Font Awesome so you can delete the space before or after the text and really take full control of your style and layout.
+
+= Can I use a CDN? Or, my theme uses Font Awesome. Can I prevent it from loading twice? =
+
+Yes! Go to Settings->Font Awesome and choose how you want Font Awesome 4 loaded. You can use the default (locally from the plugin), you can use the official MaxCDN version, you can set your own url or CDN path, or you can tell the plugin NOT to load the stylesheet at all but still enjoy the Font Awesome Menus.
 
 = Will this bloat or slow down my WordPress? =
 
-No. On your site, Font Awesome 4 Menus will load one minified stylesheet (18kb) which loads the fonts. We use it on mobile-first responsive sites (and our own site) all the time without any noticeable performance drag.
+No. On your site, Font Awesome 4 Menus will load one of four ways depending on how you set it up:
+
+* loads one minified stylesheet (18kb) to load the fonts, or
+* loads the fonts from the official Font Awesome 4 CDN at MaxCDN, or
+* loads the fonts from a custom url or CDN you choose, or
+* doesn't load the fonts at all if you choose this option.
+
+We use it on mobile-first responsive sites (and our own site) all the time without any noticeable performance drag.
 
 = What happens to my menus if I deactivate/uninstall this? =
 
 Your site will be fine. Where you used Font Awesome 4 Menus, those menu items will just have additional classes (fa-whatever) that you can erase or ignore (or style differently).
+
+If you uninstall the plugin, Font Awesome 4 Menus cleans up after itself by removing the site option and user meta that it set in your database. No bloat here and we clean up after ourselves!
+
+== Upgrade Notice ==
+
+= 4.1.0.1 =
+This upgrade allows you to load Font Awesome from a CDN or prevent double-loading of the stylesheet. It also adds the ability to remove the space in your menus for finer style control.
+
+== Changelog ==
+
+= 4.1.0.1 =
+* Added MaxCDN as an optional stylesheet source
+* Added the ability to set your own Font Awesome stylesheet url
+* Added the ability to prevent Font Awesome 4 Menus from loading the stylesheet if your theme or another plugin already does
+* Added an administration screen
+* Added an uninstall function to clean up after itself upon uninstalling the plugin
+* Updated the readme to reflect the changes in this update

@@ -627,8 +627,8 @@ div.wpcf7 img.ajax-loader {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	font-weight: bold;
-	letter-spacing: -.5px;
+	font-weight: 400;
+	/* letter-spacing: -.5px; */
 }
 
 .sf-menu li {
