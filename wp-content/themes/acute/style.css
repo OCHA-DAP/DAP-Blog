@@ -25,11 +25,14 @@
 
 
 body {
- 	background-color: #1ebfb3; /* EDIT: it was #fff */
+ 	background-color: #1ebfb3;
   	color: #404040;
   	font: 17px/30px "Source Sans Pro", Helvetica, Arial, sans-serif; /* It was 'Source Sans Pro' */
   	font-weight: 300;
   	background-size: 1500px;
+  	max-width: 1260px;
+   	margin-left: auto;
+   	margin-right: auto;
 }
 
 p {
