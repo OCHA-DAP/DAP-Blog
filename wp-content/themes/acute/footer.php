@@ -131,7 +131,7 @@ $options = get_option('bean_theme');
 		  				</div>
 
 		  				<div class="one columns hide-for-small center">
-		  					<img src="http://localhost:8888/wp-content/uploads/cc_logo.png" />
+		  					<img src="/wp-content/uploads/cc_logo.png" />
 		  				</div>
 		  				<div class="three columns hide-for-small right">
 		  					Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license.
