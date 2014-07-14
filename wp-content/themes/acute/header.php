@@ -22,7 +22,9 @@
 	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 	<!-- Loading C3 + D3 JavaScript -->
-  	<link href='https://rawgit.com/masayuki0812/c3/master/c3.css' rel='stylesheet' />
+	<script src="/wp-content/themes/acute/assets/js/d3.min.js"></script>
+	<script src='/wp-content/themes/acute/assets/js/c3.js'></script>
+	<link href='/wp-content/themes/acute/assets/css/c3.css' rel='stylesheet' />
 
 	<?php $options = get_option('bean_theme'); bean_analytics(true); ?>
 
