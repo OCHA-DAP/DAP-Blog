@@ -1,0 +1,219 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Acute\n"
+"POT-Creation-Date: 2013-03-30 12:01-0500\n"
+"PO-Revision-Date: 2013-03-30 12:01-0500\n"
+"Last-Translator: \n"
+"Language-Team: ThemeBeans <hello@themebeans.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;bean\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/sidebars/sidebars.php:47
+msgid ""
+"In the <a href=\"edit.php?post_type=sidebar\">Widget Area Manager</a>, you "
+"can create and manage widget areas for specific pages of your website to "
+"override the default locations you see below."
+msgstr ""
+
+#: ../admin/sidebars/classes/class.radiumsidebars.php:353
+msgid "Description"
+msgstr ""
+
+#: ../content/content-header.php:8
+msgid "The Blog."
+msgstr ""
+
+#: ../content/content-header.php:22
+msgid "All posts by: "
+msgstr ""
+
+#: ../functions/comments.php:32
+msgid ""
+"\\t\\t\\t\\t\\t<span class=\"unapproved\">Your trackback is awaiting "
+"moderation</span>\\n"
+msgstr ""
+
+#: ../functions/media.php:429
+msgid ""
+"<span>Update Required</span>To play the audio you will need to either update "
+"your browser to a recent version or update your <a href=\"http://get.adobe."
+"com/flashplayer/\" target=\"_blank\">Flash plugin</a>."
+msgstr ""
+
+#: ../functions/media.php:554
+msgid ""
+"<span>Update Required</span>To play the video you will need to either update "
+"your browser to a recent version or update your <a href=\"http://get.adobe."
+"com/flashplayer/\" target=\"_blank\">Flash plugin</a>."
+msgstr ""
+
+#: ../widgets/widget-dribbble.php:190 ../widgets/widget-flickr.php:113
+#: ../widgets/widget-newsletter.php:108 ../widgets/widget-popular.php:116
+#: ../widgets/widget-skills.php:213 ../widgets/widget-social-counter.php:258
+#: ../widgets/widget-social.php:260 ../widgets/widget-twitter.php:114
+msgid "Title:"
+msgstr ""
+
+#: ../widgets/widget-dribbble.php:195
+msgid "<a href=\"http://www.dribbble.com/themebeans\">Dribbble</a> account:"
+msgstr ""
+
+#: ../widgets/widget-dribbble.php:200
+msgid "Number of Shots:"
+msgstr ""
+
+#: ../widgets/widget-flickr.php:118
+msgid "Flickr ID:"
+msgstr ""
+
+#: ../widgets/widget-flickr.php:123
+msgid "Type (user or group):"
+msgstr ""
+
+#: ../widgets/widget-flickr.php:131
+msgid "Display (random or latest):"
+msgstr ""
+
+#: ../widgets/widget-newsletter.php:62
+msgid "Submit"
+msgstr ""
+
+#: ../widgets/widget-newsletter.php:113
+msgid "Placeholder Text:"
+msgstr ""
+
+#: ../widgets/widget-newsletter.php:118
+msgid "Subscribe Code:"
+msgstr ""
+
+#: ../widgets/widget-skills.php:220 ../widgets/widget-skills.php:239
+#: ../widgets/widget-skills.php:258 ../widgets/widget-skills.php:277
+#: ../widgets/widget-skills.php:296
+msgid "Skill Title:"
+msgstr ""
+
+#: ../widgets/widget-skills.php:225 ../widgets/widget-skills.php:244
+#: ../widgets/widget-skills.php:263 ../widgets/widget-skills.php:282
+#: ../widgets/widget-skills.php:301
+msgid "Hex:"
+msgstr ""
+
+#: ../widgets/widget-skills.php:230 ../widgets/widget-skills.php:249
+#: ../widgets/widget-skills.php:268 ../widgets/widget-skills.php:287
+#: ../widgets/widget-skills.php:306
+msgid "Per:"
+msgstr ""
+
+#: ../widgets/widget-social-counter.php:69
+#: ../widgets/widget-social-counter.php:97
+msgid " Followers"
+msgstr ""
+
+#: ../widgets/widget-social-counter.php:83
+msgid " Fans"
+msgstr ""
+
+#: ../widgets/widget-social-counter.php:263
+msgid ""
+"Twitter Username (ex: <a href=\"http://www.twitter.com/themebeans"
+"\">ThemeBeans</a>):"
+msgstr ""
+
+#: ../widgets/widget-social-counter.php:268
+msgid "Facebook Page Name:"
+msgstr ""
+
+#: ../widgets/widget-social-counter.php:273
+msgid "Dribbble Username:"
+msgstr ""
+
+#: ../widgets/widget-social.php:265
+msgid "Behance URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:270
+msgid "Delicious URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:275
+msgid "Digg URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:280
+msgid "Dribbble URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:285
+msgid "Facebook URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:290
+msgid "Flickr URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:295
+msgid "Forrst URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:300
+msgid "FourSquare URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:305
+msgid "Github URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:310
+msgid "Google Plus URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:315
+msgid "LinkedIn URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:320
+msgid "Pinterest URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:325
+msgid "RSS URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:330
+msgid "StumbleUpon URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:335
+msgid "Twitter URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:340
+msgid "Vimeo URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:345
+msgid "YouTube URL:"
+msgstr ""
+
+#: ../widgets/widget-social.php:350
+msgid "Zerply URL:"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:119
+msgid ""
+"Twitter Username (ex: <a href=\"http://www.twitter.com/themebeans"
+"\">ThemeBeans</a>)"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:124
+msgid "Number of Tweets (max 20)"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:129
+msgid "Button Text"
+msgstr ""
