@@ -1,4 +1,4 @@
-DAP Blog 
+HDX Blog 
 ===============================
 
 The blog is based on WordPress (http://wordpress.org/). It was developed on top of the `Acute` theme by ThemeBeans (http://themebeans.com/). 
@@ -15,7 +15,7 @@ New Style Iterations
 C3 (D3.js) Plots
 ----------------
 
-Authors can now publish [C3.js]() plots on their posts or other pages of the blog. In order to work, the authors have to add the JavaScript code within `<script>` tags and carefuly format them to avoid WordPress' auto-formatter to get in the way of making the charts work.
+Authors can now publish [C3.js](c3js.org) plots on their posts or other pages of the blog. In order to work, the authors have to add the JavaScript code within `<script>` tags and carefuly format them to avoid WordPress' auto-formatter to get in the way of making the charts work.
 
 
 Issues
