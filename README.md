@@ -12,6 +12,11 @@ New Style Iterations
 - Iteration 3: https://github.com/OCHA-DAP/DAP-Blog/blob/master/iteration_3.png
 
 
+C3 (D3.js) Plots
+----------------
+
+Authors can now publish [C3.js]() plots on their posts or other pages of the blog. In order to work, the authors have to add the JavaScript code within `<script>` tags and carefuly format them to avoid WordPress' auto-formatter to get in the way of making the charts work.
+
 
 Issues
 ------
