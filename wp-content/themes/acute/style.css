@@ -47,7 +47,7 @@ a {
 }
 
 p a {
-	color: #0988bb;
+	color: #f65c51;
 	border-bottom: solid 1px #ddd;
 	text-decoration: none;
 	-moz-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
@@ -3630,7 +3630,14 @@ ul.bean_social_icons li.bean_social_icon {
 .bean-pricing-table .table-mast h6.price {
 	margin-bottom: 10px!important;
 }
-	
+
+a.more-link.twitterSpecial {
+	margin-top: 0px;
+	border-radius: 20px;
+	background-image: url(assets/images/twitter.png);
+	background-position: 10px -363px;
+
+}
 
 
 

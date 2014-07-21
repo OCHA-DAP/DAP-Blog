@@ -114,7 +114,7 @@ a { text-decoration: none; line-height: inherit; }
 a img {border: none;}
 a img {border: none;}
 a:focus { outline: none; }
-p a, p a:hover { line-height: inherit; font-weight: bold; color: #f65c51;
+p a, p a:hover { line-height: inherit; font-weight: bold; color: #007ce0;
                                               -webkit-transition: all .1s;
                                                  -moz-transition: all .1s;
                                                   -ms-transition: all .1s;
