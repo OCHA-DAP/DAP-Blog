@@ -80,8 +80,10 @@ div.rtw_timestamp {
 	display: inline;
 }
 .rotatingtweet p.rtw_main {
-	font-size: 14px;
+	font-size: 15px;
 	clear: both;
+	line-height: 19px;
+	margin-bottom: 14px;
 }
 .rtw_wide_block p.rtw_main,div.rtw_main {
 	clear: none;

@@ -35,7 +35,6 @@ $options = get_option('bean_theme');
 		  					</div>
 		  					</div>
 		  					</nav>
-
 		  							 <span> HUMANITARIAN DATA EXCHANGE BETA   v0.3.0 </span>
 		  				</div>
 
@@ -43,7 +42,7 @@ $options = get_option('bean_theme');
 		  					<img src="/wp-content/uploads/cc_logo.png" />
 		  				</div>
 		  				<div class="three columns hide-for-small right">
-		  					Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+		  					Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> International license.
 						</div><!-- END .footer-fullwidth -->
 
 
@@ -134,7 +133,7 @@ $options = get_option('bean_theme');
 		  					<img src="/wp-content/uploads/cc_logo.png" />
 		  				</div>
 		  				<div class="three columns hide-for-small right">
-		  					Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+		  					Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> International license.
 						</div><!-- END .footer-fullwidth -->
 
 

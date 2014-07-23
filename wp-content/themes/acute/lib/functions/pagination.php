@@ -20,8 +20,8 @@ if(!function_exists('bean_index_pagination')) {
 		}
 		
 		$output = "";
-		$prev = $paged - 1;							
-		$next = $paged + 1;	
+		$prev = $paged - 1;
+		$next = $paged + 1;
 		$range = 7; // only edit this if you want to show more page-links
 		$showitems = ($range * 2)+1;
 		
@@ -46,7 +46,7 @@ if(!function_exists('bean_index_pagination')) {
 		
 		if(1 != $pages)
 		{
-			$output .= "<div class='row'><div class='twelve columns'><div class='index-pagination'>";
+			$output .= "<div class='row-pagination'><div class='twelve columns pagination-pad'><div class='index-pagination'>";
 			
 			$output .= ($paged > 2 && $paged > $range+1 && $showitems < $pages)? "<a href='".$method(1)."'></a>":"";
 			
