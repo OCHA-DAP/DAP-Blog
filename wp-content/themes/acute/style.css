@@ -206,6 +206,8 @@ ol li ol {
 .BlogFrontPage .entry-header {
 	width: 41.66667%;
 	float: left;
+	margin-right: 20px;
+	margin-bottom: 36px;
 }
 
 .BlogFrontPage .entry-header .animation {
@@ -1342,7 +1344,7 @@ span.page-previous.inactive {
 	
 .index-pager span.page-previous, 
 .index-pager span.page-next {
-	margin: 0 2px;
+	margin: 10px 2px;
 }
 
 /* STANDARD POST FORMAT */
@@ -1688,7 +1690,7 @@ section.animation_area {
 }
 
 .video_embed {
-	width: 58.33333%;
+	width: 56%;
 	float: right;
 }
 

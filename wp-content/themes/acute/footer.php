@@ -35,7 +35,7 @@ $options = get_option('bean_theme');
 		  					</div>
 		  					</div>
 		  					</nav>
-		  							 <span> HUMANITARIAN DATA EXCHANGE BETA   v0.3.0 </span>
+		  							 <span> HUMANITARIAN DATA EXCHANGE BETA </span>
 		  				</div>
 
 		  				<div class="one columns hide-for-small center">
@@ -101,7 +101,7 @@ $options = get_option('bean_theme');
 		  					</div>
 		  					</nav>
 
-		  							 <span> HUMANITARIAN DATA EXCHANGE BETA   v0.3.0 </span>
+		  							 <span> HUMANITARIAN DATA EXCHANGE BETA </span>
 		  							 <div class="twelve columns" style="padding-left: 0px;">
 		  							 	<span> Subscribe to our mailing list.</span>
 		  							 		<!-- Begin MailChimp Signup Form -->
@@ -121,7 +121,7 @@ $options = get_option('bean_theme');
 											    </div>
 											    -->
 											<div class="clear one columns left">
-												<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mailchimp">
+												<input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="mailchimp">
 											</div>
 											</form>
 											</div>

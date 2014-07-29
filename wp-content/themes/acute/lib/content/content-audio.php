@@ -31,7 +31,7 @@
 			
 			<article class="entry-content">	
 				
-				<?php the_content( __( '<span>Continue Reading</span>', 'bean' ) ); ?>
+				<?php the_content( __( '<span>CONTINUE READING</span>', 'bean' ) ); ?>
 				
 				<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'bean' ) . '</span>', 'after' => '</div>' ) ); ?>
 			
