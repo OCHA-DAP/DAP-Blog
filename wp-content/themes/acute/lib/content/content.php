@@ -43,7 +43,6 @@
 					<?php } bean_post_meta(); ?>
 
 				</header><!-- .entry-header -->
-			</div>
 			<div>
 				<article class="entry-content">
 

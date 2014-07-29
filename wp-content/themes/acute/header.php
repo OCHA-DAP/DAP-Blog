@@ -119,7 +119,13 @@
 
 				<div id="header-title">
 
-					<?php get_template_part( 'lib/content/content', 'header' ); ?>
+					<div class="ten columns">
+						<!-- <?php get_template_part( 'lib/content/content', 'header' ); ?> -->
+						<?php echo do_shortcode( "[rotatingtweets screen_name='humdata']" ) ?>
+					</div>
+					<div class="two columns">
+						<a href="http://www.twitter.com/humdata" title="Twitter" class="more-link twitterSpecial">Follow us</a>
+					</div>
 
 				</div><!-- END #header-title -->
 

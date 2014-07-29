@@ -47,7 +47,7 @@ a {
 }
 
 p a {
-	color: #0988bb;
+	color: #f65c51;
 	border-bottom: solid 1px #ddd;
 	text-decoration: none;
 	-moz-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
@@ -208,6 +208,11 @@ ol li ol {
 	float: left;
 }
 
+.BlogFrontPage .entry-header .animation {
+	width: 41.66667%;
+	float: left;
+	padding-top: 80px;
+}
 .single-post .entry-header  {
 	width: 100%;
 }
@@ -542,6 +547,15 @@ div.wpcf7 img.ajax-loader {
 	font: 600 40px/45px "Source Sans Pro", Arial, Helvetica, Geneva, sans-serif; /* "Source Sans Pro", */ 
 	color: #000000;
 	/* margin-top: 40px; */
+}
+
+.entry-header .animation_title {
+	font: 600 40px/45px "Source Sans Pro", Arial, Helvetica, Geneva, sans-serif;
+	margin-top: 40px;
+}
+
+.animation_title a {
+	color: #ffffff !important;
 }
 
 .author #header-title h1 {
@@ -1301,10 +1315,24 @@ textarea.error,
 	background-position: 5px -278px;
 }
 
-/* INDEX SPECIFIC */	
-.index-pagination { 
-	margin: 75px 0px 60px;
+/* INDEX SPECIFIC */
+/* pagination specific css */
+.index-pagination {
 	text-align: center;
+	background-color: #fff;
+	padding: 0;
+}
+
+.row-pagination {
+	width: 100%;
+	max-width: 1260px;
+	margin: 0 auto;
+	clear: both;
+	display: table;
+}
+/* not very good: hack */
+.pagination-pad {
+	padding: 0 0 0 0;
 }
 
 span.page-next.inactive,
@@ -1562,6 +1590,16 @@ blockquote p {
 	        transition: all 0.15s ease-in-out;
 }
 
+/* Animation specific */ 
+.entry-header .animation_title h1 a {
+	color: #ffffff;
+	-webkit-transition: all 0.15s ease-in-out;
+	   -moz-transition: all 0.15s ease-in-out;
+		-ms-transition: all 0.15s ease-in-out;
+		 -o-transition: all 0.15s ease-in-out;
+	        transition: all 0.15s ease-in-out;
+}
+
 .entry-header h1 a:hover,
 .entry-header h2 a:hover,
 .entry-header h3 a:hover {
@@ -1640,6 +1678,18 @@ span.meta-label,
 section.type-post {
 	padding: 75px 0px 65px;
 	background-color: #fff;
+}
+
+/* Animation Specific CSS */
+
+section.animation_area {
+	padding: 35px 0px 25px;
+	background-color: #363636;
+}
+
+.video_embed {
+	width: 58.33333%;
+	float: right;
 }
 
 .single-post section.type-post {
@@ -3630,7 +3680,14 @@ ul.bean_social_icons li.bean_social_icon {
 .bean-pricing-table .table-mast h6.price {
 	margin-bottom: 10px!important;
 }
-	
+
+a.more-link.twitterSpecial {
+	margin-top: 0px;
+	border-radius: 20px;
+	background-image: url(assets/images/twitter.png);
+	background-position: 10px -363px;
+
+}
 
 
 
