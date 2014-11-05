@@ -35,10 +35,9 @@ if ( defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	global $wpdb, $wp_filesystem;
 
 	// delete any options or other data stored in the database here
-	delete_option( Ai1wm_Export::EXPORT_LAST_OPTIONS );
-	delete_option( Ai1wm_Error::ERROR_HANDLER );
-	delete_option( Ai1wm_Error::EXCEPTION_HANDLER );
-	delete_option( Ai1wm_Message::MESSAGE_INFO_CLOSE );
-
-	// delete any files not located inside plugin's folder (if any)
+	delete_option( AI1WM_MAINTENANCE_MODE );
+	delete_option( AI1WM_EXPORT_OPTIONS );
+	delete_option( AI1WM_ERROR_HANDLER );
+	delete_option( AI1WM_EXCEPTION_HANDLER );
+	delete_option( AI1WM_MESSAGES );
 }

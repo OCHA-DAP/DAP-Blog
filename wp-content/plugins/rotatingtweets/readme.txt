@@ -3,8 +3,8 @@ Contributors: mpntod
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9XCNM4QSVHYT8
 Tags: shortcode,widget,twitter,rotating,rotate,rotator,tweet,tweets,animation,jquery,jquery cycle,cycle,multilingual,responsive
 Requires at least: 2.6
-Tested up to: 3.9.1
-Stable tag: 1.7.2
+Tested up to: 4.0
+Stable tag: 1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Twitter widget and shortcode to show your latest tweets one at a time an animate
 
 == Description ==
 * **Replaces a [shortcode](http://codex.wordpress.org/Shortcode) such as `[rotatingtweets screen_name='your_twitter']`, or a [widget](http://codex.wordpress.org/WordPress_Widgets), with a rotating display of your most recent tweets**
-* **Supports v 1.1 of the Twitter API** - yes! it will keep working after [June 11, 2013](https://dev.twitter.com/blog/api-v1-is-retired)
+* **Supports v 1.1 of the Twitter API** ([i.e. it still works](https://dev.twitter.com/blog/api-v1-is-retired))
 * **Space efficient** - instead of showing all your tweets at once, shows one at a time and then smoothly replaces it with the next one. After showing all your tweets, loops back to the beginning again.
 * **Reliable** - keeps showing your latest Tweets even if the Twitter website is down.
 * **Customisable** - you decide whose tweets to show, how many to show, whether to include retweets and replies, and whether to show a follow button. You can also decide how quickly the tweets rotate and what type of animation to use.
@@ -20,7 +20,7 @@ Twitter widget and shortcode to show your latest tweets one at a time an animate
 * Gives you the option to show a fully customisable Twitter 'follow' button
 * Replaces [t.co](http://t.co) links with the original link
 * Caches the most recent data from Twitter to avoid problems with rate limiting
-* Uses [jQuery](http://jquery.com/) and [jQuery.Cycle](http://jquery.malsup.com/cycle/) to produce a nice smooth result.
+* Uses [jQuery](http://jquery.com/), [jQuery.Cycle](http://jquery.malsup.com/cycle/) and [jQuery.Cycle2](http://jquery.malsup.com/cycle2/) to produce a nice smooth result.
 * **Multi-lingual** - now set up to be multi-lingual. The Twitter 'follow' button is automatically translated to match your site's language setting [if Twitter has made the appropriate language available](https://dev.twitter.com/docs/api/1.1/get/help/languages). Also uses [Wordpress's multi-lingual capability](http://codex.wordpress.org/I18n_for_WordPress_Developers) to enable translation of all the other text used by the plug-in via language packs.
 
 Currently the following languages are available:
@@ -77,9 +77,10 @@ Possible variables for the shortcode include:
 	* `links_in_new_window` = `'0'` or `'1'` - show links in a new tab or window - default is `'0'`
 	* `rotation_type` = If you are using version 1 of the JavaScript, you can use any of the options listed on the [jQuery.cycle website](http://jquery.malsup.com/cycle/browser.html) - default is `'scrollUp'.`  If you are using version 2 of the JavaScript, then the options are `'scrollUp'`,`'scrollDown'`,`'scrollHorz'`,`'scrollLeft'`,`'scrollRight'`,`'toss'`,`'scrollVert'`,`'fade'` and `'carousel'`
 		*	`carousel_horizontal` = `0` or `1` - if you've chosen 'carousel' as a rotation type, allow horizontal scrolling - default is `0`
-		*	'carousel_count' => ''number'' - if you've chosen 'carousel' as a rotation type, set the number of slides to appear in the carousel - default is 3 for vertical carousel and enough to fill the width of the page for horizontal carousel
-		*	'carousel_responsive' => `0` or `1` - if you've chosen a 'horizontal carousel' as a rotation type, makes the carousel responsive to the size of the page - default is `0`
-	* `url_length` = sets the length that the URL should be trimmed to... - optional
+		*	`carousel_count` = ''number'' - if you've chosen 'carousel' as a rotation type, set the number of slides to appear in the carousel - default is 3 for vertical carousel and enough to fill the width of the page for horizontal carousel
+		*	`carousel_responsive` = `0` or `1` - if you've chosen a 'horizontal carousel' as a rotation type, makes the carousel responsive to the size of the page - default is `0`
+	* `url_length` = sets the length that the URL of links should be trimmed to... - optional
+	* `show_tco_link` = `'0'` or `'1'` allows you to show Twitter's t.co link instead of the original link - optional
 	* `show_meta_timestamp` = `'0'` or `'1'` - show the time and date of each tweet - default is `'1'`
 	* `show_meta_screen_name` = `'0'` or `'1'` - show who posted each tweet - default is `'1'`
 	* `show_meta_via` = `'0'` or `'1'` - show how each tweet was posted - default is `'1'`
@@ -173,13 +174,21 @@ into your CSS - changing `123px;` to the width you're aiming at - either via put
 You can do this by going to the `rotatingtweets/css` directory and renaming `rotatingtweets-sample.css` to `rotatingtweets.css` and putting it in the `wp-content/uploads/` directory.  This displays a Twitter bird to the left of your tweets.  Any CSS you put into `rotatingtweets.css` won't be overwritten when the plug-in is upgraded to the latest version.
 
 == Upgrade notice ==
-= 1.7.2 =
-* Removes 'expand' for carousel rotation.  Adds new 'insidebottom' option for 'next / prev' buttons.
+= 1.7.4 =
+* Ensures all images use `https://` link for compatibility with SSL-secured sites
 
 == Changelog ==
+= 1.7.4 =
+* Ensures all images use `https://` link for compatibility with SSL-secured sites
+
+= 1.7.3 =
+* Adds `show_tco_link` shortcode variable to allow people to show t.co.links.
+* Support for Newswire template
+* Restores the caching of Tweet co-ordinates
+
 = 1.7.2 =
-* Removes 'expand' for carousel rotation. 
-* Adds new `insidebottom` option for position of 'next / prev' buttons
+* Switches off JavaScript expansion of 'expand' to 'reply retweet favorite' for carousel rotation. 
+* Adds new `insidebottom` option for `np_pos` shortcode variable
 
 = 1.7.1 =
 * Improved CSS support for horizontal carousel scrolling

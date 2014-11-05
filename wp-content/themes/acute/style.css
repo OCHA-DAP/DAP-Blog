@@ -1572,8 +1572,10 @@ blockquote {
 blockquote, 
 blockquote p {
  	font-family: "Source Sans Pro", Arial, Helvetica, Geneva, sans-serif; /* "Source Sans Pro", */ 
- 	font-size: 28px!important;
- 	line-height: 38px!important;
+ 	/* font-size: 28px!important; */
+ 	/* line-height: 38px!important; */
+ 	color: #404040;
+ 	margin: 0 0 14px;
 }
 
 

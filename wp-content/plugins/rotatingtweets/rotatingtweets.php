@@ -2,7 +2,7 @@
 /*
 Plugin Name: Rotating Tweets (Twitter widget & shortcode)
 Description: Replaces a shortcode such as [rotatingtweets screen_name='your_twitter_name'], or a widget, with a rotating tweets display 
-Version: 1.7.2
+Version: 1.7.4
 Text Domain: rotatingtweets
 Author: Martin Tod
 Author URI: http://www.martintod.org.uk
@@ -401,11 +401,7 @@ function rotatingtweets_user_intent($person,$lang,$linkcontent,$targetvalue='') 
 	$return = "<a href='https://twitter.com/intent/user?user_id={$person['id']}' title='".esc_attr($person['name'])."' lang='{$lang}'{$targetvalue}>";
 	switch($linkcontent){
 	case 'icon':
-		if(isset($_SERVER['HTTPS'])):
-			$return .= "<img src='{$person['profile_image_url_https']}' alt='".esc_attr($person['name'])."' /></a>";
-		else:
-			$return .= "<img src='{$person['profile_image_url']}' alt='".esc_attr($person['name'])."' /></a>";		
-		endif;
+		$return .= "<img src='{$person['profile_image_url_https']}' alt='".esc_attr($person['name'])."' /></a>";
 		break;
 	case 'name':
 		$return .= $person['name']."</a>";
@@ -505,7 +501,8 @@ function rotatingtweets_display_shortcode( $atts, $content=null, $code="", $prin
 			'carousel_horizontal' => 0,
 			'carousel_count' => 0,
 			'carousel_responsive' => 0,
-			'no_emoji' => 0
+			'no_emoji' => 0,
+			'show_tco_link' => 0
 		), $atts ) ;
 	extract($args);
 	if(empty($screen_name) && empty($search) && !empty($url)):
@@ -1104,7 +1101,7 @@ function rotatingtweets_shrink_json($json) {
 }
 function rotatingtweets_shrink_element($json) {
 	global $args;
-	$rt_top_elements = array('text','retweeted_status','user','entities','source','id_str','created_at');
+	$rt_top_elements = array('text','retweeted_status','user','entities','source','id_str','created_at','coordinates');
 	$return = array();
 	foreach($rt_top_elements as $rt_element):
 		if(isset($json[$rt_element])):
@@ -1514,7 +1511,11 @@ function rotating_tweets_display($json,$args,$print=TRUE) {
 									$displayurl = str_replace(json_decode('"\u2026"'),"",$displayurl);
 									$displayurl = substr($displayurl,0,$urllength)."&hellip;";
 								endif;
-								$after[] = "<a href='".$url['url']."' title='".$url['expanded_url']."'".$targetvalue.">".esc_html($displayurl)."</a>";
+								if(isset($args['show_tco_link']) && $args['show_tco_link']):
+									$after[] = "<a href='".$url['url']."' title='".$url['expanded_url']."'".$targetvalue.">".esc_html($url['url'])."</a>";								
+								else:
+									$after[] = "<a href='".$url['url']."' title='".$url['expanded_url']."'".$targetvalue.">".esc_html($displayurl)."</a>";
+								endif;
 							endforeach;
 						endif;
 						if(isset($entities['media'])):
@@ -1868,6 +1869,13 @@ function rotatingtweets_enqueue_scripts() {
 				'jquery-cycle2-scrollvert' => plugins_url('cyclone-slider-2/libs/cycle2/jquery.cycle2.scrollVert.min.js'),
 				'rotating_tweet' => plugins_url('js/rotatingtweets_v2_cyclone.js', __FILE__)
 			);
+		elseif ( function_exists( 'newswire_custom_scripts' ) ):
+			$rt_enqueue_script_list = array(
+				'cycle2' => get_template_directory_uri() . '/library/js/jquery.cycle2.min.js' ,
+				'cycle2_scrollvert' => get_template_directory_uri() . '/library/js/jquery.cycle2.scrollVert.min.js' ,
+				'cycle2_carousel' => plugins_url('js/jquery.cycle2.carousel.js', __FILE__),
+				'rotating_tweet' => plugins_url('js/rotatingtweets_v2_cyclone.js', __FILE__)
+			);		
 		else:
 			$rt_enqueue_script_list = array(
 				'jquery-cycle2-renamed' => plugins_url('js/jquery.cycle2.renamed.js', __FILE__),
