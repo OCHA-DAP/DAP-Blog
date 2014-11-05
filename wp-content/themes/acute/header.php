@@ -80,7 +80,7 @@
 
 	  						<div id="primary-nav" class="main_menu">
 
-
+	  							<!-- taking out the automatically generated menu
 	  							<?php
 	  								$args = array(
 	  								    'container' 	=> '',
@@ -92,6 +92,16 @@
 
 	  								wp_nav_menu( apply_filters( 'radium_main_menu_args', $args ) );
 	  							 ?>
+	  							 -->
+
+									<ul id="primary-menu" class="sf-menu main-menu sf-js-enabled"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1040"><a href="https://data.hdx.rwlabs.org/dataset">DATA</a><span class="nav-sep">|</span></li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="https://data.hdx.rwlabs.org/group">COUNTRIES</a><span class="nav-sep">|</span></li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1038"><a href="https://data.hdx.rwlabs.org/organization">ORGANISATIONS</a><span class="nav-sep">|</span></li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-1054"><a href="/blog">BLOG</a><span class="nav-sep">|</span></li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1039"><a href="https://data.hdx.rwlabs.org/about">ABOUT</a></li>
+									<a id="feedback-button" href="/get-involved">FEEDBACK</a>
+									</ul>
+
 
 	  						</div><!-- END #primary-nav .main_menu -->
 
