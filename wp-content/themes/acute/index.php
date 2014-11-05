@@ -10,7 +10,7 @@ $options = get_option('bean_theme');
 	
 <div id="main" class="twelve columns" role="main">
 
-	<!-- START: animation special section -->
+	<!-- START:
 	<section id="post" class="post post type-post animation_area status-publish format-standard hentry category-blog category-hdx even">
 		<div class="row">
 			<div class="twelve columns">
@@ -21,7 +21,6 @@ $options = get_option('bean_theme');
 						</h1>
 					</header>
 					<article class="entry-content video_embed">
-						<!-- YouTube video here. -->
 						<p>
 							<iframe width="560" height="315" src="//www.youtube.com/embed/hCVyiZhYb4M" frameborder="0" allowfullscreen></iframe>
 						</p>
@@ -30,7 +29,7 @@ $options = get_option('bean_theme');
 			</div>
 		</div>
 	</section>
-	<!-- END: animation special section -->
+	END: animation special section -->
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); 
 
