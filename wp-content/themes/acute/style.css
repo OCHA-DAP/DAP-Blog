@@ -159,6 +159,33 @@ h1, h2, h3, h4, h5 {
 }
 */
 
+/* Feedback Button */
+#feedback-button {
+    background-color: #888888;
+    color: #ffffff;
+    text-shadow: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 15px;
+
+    padding: 10px 15px 10px;
+    text-decoration: none;
+
+
+    font-family: 'Gotham-Bold', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 31px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+#feedback-button:hover {
+	color: #fff !important;
+}
+
+/* END Feedback Button */
+
+
 .error { 
 	color: #ff0000; 
 }

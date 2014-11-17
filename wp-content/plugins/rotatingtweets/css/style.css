@@ -4,40 +4,10 @@
 	width: 100%;
 }
 */
-/* Feedback Button */
-#feedback-button {
-    background-color: #888888;
-    color: #ffffff;
-    text-shadow: none;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 15px;
-
-    padding: 10px 15px 10px;
-    text-decoration: none;
-
-
-    font-family: 'Gotham-Bold', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 31px;
-    text-transform: uppercase;
-    margin-bottom: 0;
-}
-#feedback-button:hover {
-	color: #fff !important;
-}
-
-/* END Feedback Button */
-
 div.rotatingtweet {
 	font-size: 100%;
 	word-wrap: break-word;
 	vertical-align: top;
-}
-div.rotatingtweet p { 
-	font: 14px/15px "Source Sans Pro", Helvetica, Arial, sans-serif;
-	font-weight: 300;
 }
 div.cycle-carousel-wrap div.rotatingtweet {
 	padding-right: 1em;
