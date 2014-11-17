@@ -4,8 +4,9 @@
 	width: 100%;
 }
 */
+
 div.rotatingtweet {
-	font-size: 100%;
+	font: 100%;
 	word-wrap: break-word;
 	vertical-align: top;
 }
