@@ -1,6 +1,8 @@
 HDX Blog 
 ===============================
 
+ARCHIVED - no longer in use
+
 The blog is based on WordPress (http://wordpress.org/). It was developed on top of the `Acute` theme by ThemeBeans (http://themebeans.com/). 
 
 
